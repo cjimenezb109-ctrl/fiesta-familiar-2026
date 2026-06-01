@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiesta Familiar 2026 – FIC UNSA | Futsal Varones</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d2a5e;
+    --navy-dark: #071840;
+    --orange: #f4621f;
+    --orange-light: #ff8c4b;
+    --teal: #1ab5a0;
+    --cream: #f5f0e8;
+    --white: #ffffff;
+    --gray-light: #e8e4da;
+    --gray-mid: #b0a99a;
+    --gray-dark: #4a453e;
+    --lose: #c0392b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Barlow', sans-serif;
+    background-color: #0a1f4e;
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(244,98,31,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 90%, rgba(26,181,160,0.10) 0%, transparent 55%),
+      repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px),
+      repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px);
+    min-height: 100vh;
+    color: var(--white);
+  }
+
+  /* HEADER */
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 32px;
+    background: rgba(7,24,64,0.92);
+    border-bottom: 2px solid var(--orange);
+    position: sticky; top: 0; z-index: 100;
+    gap: 16px;
+  }
+  .header-left { display: flex; align-items: center; gap: 14px; }
+  .logo-circle {
+    width: 64px; height: 64px; border-radius: 50%;
+    border: 2px solid var(--orange); overflow: hidden; flex-shrink: 0;
+    background: var(--cream); display: flex; align-items: center; justify-content: center;
+  }
+  .logo-fallback {
+    font-family: 'Bebas Neue', sans-serif; font-size: 14px;
+    color: var(--navy); text-align: center; line-height: 1.2; padding: 4px;
+  }
+  .header-title h1 {
+    font-family: 'Bebas Neue', sans-serif; font-size: 26px;
+    letter-spacing: 2px; color: var(--white); line-height: 1;
+  }
+  .header-title h1 span { color: var(--orange); }
+  .header-title p { font-size: 11px; color: var(--teal); letter-spacing: 3px; text-transform: uppercase; margin-top: 3px; }
+  .header-right { display: flex; gap: 10px; align-items: center; }
+  .btn {
+    padding: 8px 18px; border-radius: 4px;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 14px;
+    font-weight: 600; letter-spacing: 1px; cursor: pointer;
+    border: none; text-transform: uppercase; transition: all 0.2s;
+  }
+  .btn-orange { background: var(--orange); color: var(--white); }
+  .btn-orange:hover { background: var(--orange-light); }
+  .btn-outline { background: transparent; color: var(--teal); border: 1.5px solid var(--teal); }
+  .btn-outline:hover { background: rgba(26,181,160,0.12); }
+  .live-badge {
+    display: flex; align-items: center; gap: 6px;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 13px;
+    font-weight: 700; letter-spacing: 2px; color: var(--teal); text-transform: uppercase;
+  }
+  .live-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--teal); animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.4;transform:scale(0.7);} }
+
+  /* MAIN */
+  main { padding: 28px 20px 60px; max-width: 1400px; margin: 0 auto; }
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 11px;
+    font-weight: 700; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif; font-size: 34px;
+    letter-spacing: 3px; color: var(--white); margin-bottom: 24px;
+  }
+
+  /* BRACKET */
+  .bracket-container { overflow-x: auto; padding-bottom: 16px; }
+  .bracket { display: flex; gap: 0; min-width: 920px; align-items: stretch; }
+  .round { display: flex; flex-direction: column; align-items: center; flex: 1; padding: 0 6px; }
+  .round-title {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 12px;
+    font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 14px; text-align: center;
+  }
+  .round-matches { display: flex; flex-direction: column; width: 100%; flex: 1; }
+  .match-wrapper { display: flex; align-items: center; justify-content: center; flex: 1; padding: 5px 0; }
+  .match-card {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px; width: 158px; overflow: hidden; transition: border-color 0.2s;
+  }
+  .match-card:hover { border-color: rgba(244,98,31,0.4); }
+  .match-card.finished { border-color: rgba(26,181,160,0.3); }
+  .match-card.final-card { width: 175px; border: 1.5px solid var(--orange); }
+  .match-id {
+    font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gray-mid); padding: 4px 8px;
+    background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .match-team {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 6px 10px; gap: 6px; border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .match-team:last-of-type { border-bottom: none; }
+  .team-name {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 13px;
+    font-weight: 600; color: var(--white); white-space: nowrap;
+    overflow: hidden; text-overflow: ellipsis; max-width: 98px; letter-spacing: 0.5px;
+  }
+  .team-name.tbd { color: var(--gray-mid); font-style: italic; }
+  .team-score {
+    font-family: 'Bebas Neue', sans-serif; font-size: 20px;
+    color: var(--white); min-width: 22px; text-align: right; line-height: 1;
+  }
+  .team-score.winner { color: var(--teal); }
+  .team-score.loser  { color: var(--lose); opacity: 0.7; }
+  .match-team.winner-team { background: rgba(26,181,160,0.08); }
+  .match-team.loser-team  { background: rgba(0,0,0,0.1); }
+
+  /* CHAMPION */
+  .champion-box {
+    background: linear-gradient(135deg, rgba(244,98,31,0.18), rgba(26,181,160,0.12));
+    border: 2px solid var(--orange); border-radius: 10px;
+    padding: 18px 20px; text-align: center; min-width: 175px; margin-top: 14px;
+  }
+  .champion-label {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 11px;
+    font-weight: 700; letter-spacing: 3px; color: var(--orange);
+    text-transform: uppercase; margin-bottom: 6px;
+  }
+  .champion-name { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 2px; color: var(--white); }
+  .champion-name.empty { color: var(--gray-mid); font-size: 16px; }
+  .trophy-icon { font-size: 26px; margin-bottom: 4px; }
+  .last-update { font-size: 12px; color: var(--gray-mid); margin-top: 14px; text-align: right; }
+
+  /* CONNECTING LINES */
+  .bracket-svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+
+  /* STATUS BAR */
+  .status-bar {
+    display: flex; align-items: center; gap: 10px;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px; padding: 10px 16px; margin-bottom: 20px; font-size: 13px;
+  }
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .status-dot.green { background: var(--teal); animation: pulse 2s infinite; }
+  .status-dot.yellow { background: #f39c12; }
+  .status-dot.red { background: var(--lose); }
+  .status-text { color: var(--gray-mid); }
+  .status-text strong { color: var(--white); }
+
+  /* MODAL */
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.78);
+    z-index: 200; display: none; align-items: center; justify-content: center;
+    backdrop-filter: blur(4px);
+  }
+  .modal {
+    background: #0d1f4a; border: 1.5px solid var(--orange);
+    border-radius: 10px; width: 95%; max-width: 700px;
+    max-height: 92vh; overflow-y: auto; padding: 26px 30px;
+  }
+  .modal-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 14px;
+  }
+  .modal-title { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 2px; color: var(--orange); }
+  .modal-close { background: none; border: none; color: var(--gray-mid); font-size: 22px; cursor: pointer; line-height: 1; }
+  .modal-close:hover { color: var(--white); }
+
+  /* LOGIN */
+  .login-form { display: flex; flex-direction: column; gap: 14px; max-width: 320px; margin: 0 auto; }
+  .form-label { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 4px; }
+  .form-input {
+    width: 100%; padding: 10px 14px;
+    background: rgba(255,255,255,0.07); border: 1.5px solid rgba(255,255,255,0.15);
+    border-radius: 5px; color: var(--white);
+    font-family: 'Barlow', sans-serif; font-size: 14px; outline: none;
+  }
+  .form-input:focus { border-color: var(--orange); }
+  .form-error { color: #e74c3c; font-size: 13px; text-align: center; display: none; }
+
+  /* ADMIN */
+  .admin-match-row {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px; padding: 11px 14px; margin-bottom: 9px;
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .admin-match-id { font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; color:var(--orange); min-width:70px; }
+  .admin-teams { display:flex; align-items:center; gap:8px; flex:1; min-width:200px; }
+  .admin-team-name { font-size:13px; font-weight:600; color:var(--white); flex:1; text-align:center; }
+  .score-input {
+    width:50px; padding:5px 6px;
+    background:rgba(255,255,255,0.1); border:1.5px solid rgba(255,255,255,0.2);
+    border-radius:4px; color:var(--white);
+    font-family:'Bebas Neue',sans-serif; font-size:22px; text-align:center; outline:none;
+  }
+  .score-input:focus { border-color: var(--teal); }
+  .vs-label { font-family:'Bebas Neue',sans-serif; font-size:14px; color:var(--gray-mid); }
+  .btn-save-match {
+    padding:7px 14px; background:var(--teal); color:var(--navy-dark);
+    border:none; border-radius:4px;
+    font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700;
+    letter-spacing:1px; cursor:pointer; text-transform:uppercase; transition:opacity 0.2s;
+  }
+  .btn-save-match:hover { opacity:0.85; }
+  .btn-save-match:disabled { opacity:0.35; cursor:default; }
+  .admin-section-title {
+    font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700;
+    letter-spacing:3px; text-transform:uppercase; color:var(--teal);
+    margin:18px 0 9px; padding-bottom:5px; border-bottom:1px solid rgba(26,181,160,0.2);
+  }
+  .admin-note { font-size:12px; color:var(--gray-mid); font-style:italic; margin-bottom:14px; line-height:1.6; }
+
+  /* TOAST */
+  .toast {
+    position:fixed; bottom:24px; right:24px;
+    padding:10px 20px; border-radius:5px;
+    font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:700; letter-spacing:1px;
+    display:none; z-index:999;
+  }
+
+  /* FOOTER */
+  footer { text-align:center; padding:22px; font-size:12px; color:var(--gray-mid); border-top:1px solid rgba(255,255,255,0.06); letter-spacing:1px; }
+  footer span { color:var(--orange); }
+
+  @media(max-width:600px){
+    header { padding:12px 14px; }
+    .header-title h1 { font-size:19px; }
+    main { padding:16px 10px 40px; }
+    .section-title { font-size:26px; }
+    .modal { padding:18px 14px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <div class="logo-circle">
+      <div class="logo-fallback">FIESTA<br>FAM</div>
+    </div>
+    <div class="header-title">
+      <h1>Fiesta <span>Familiar</span> 2026</h1>
+      <p>⚽ Futsal Varones · FIC UNSA</p>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="live-badge"><div class="live-dot"></div>En vivo</div>
+    <button class="btn btn-outline" onclick="openAdminModal()">Admin</button>
+  </div>
+</header>
+
+<main>
+  <div class="section-label">Campeonato Deportivo 2026</div>
+  <div class="section-title">LLAVE ELIMINATORIA</div>
+
+  <div class="status-bar" id="statusBar">
+    <div class="status-dot yellow" id="statusDot"></div>
+    <div class="status-text" id="statusText">Conectando con Firebase...</div>
+  </div>
+
+  <div class="bracket-container">
+    <div class="bracket" id="bracketView"></div>
+  </div>
+  <div class="last-update" id="lastUpdate"></div>
+</main>
+
+<footer>
+  <p>Fiesta Familiar 2026 · <span>FIC UNSA</span> · Facultad de Ingeniería Civil · UNSA</p>
+</footer>
+
+<!-- ADMIN MODAL -->
+<div class="modal-overlay" id="adminModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Panel Administrador</div>
+      <button class="modal-close" onclick="closeAdminModal()">✕</button>
+    </div>
+
+    <!-- Login -->
+    <div id="loginPanel">
+      <div class="login-form">
+        <div>
+          <div class="form-label">Contraseña</div>
+          <input type="password" class="form-input" id="pwInput" placeholder="Ingresa la contraseña"
+            onkeydown="if(event.key==='Enter') doLogin()">
+        </div>
+        <button class="btn btn-orange" onclick="doLogin()">Ingresar</button>
+        <div class="form-error" id="loginError">⚠ Contraseña incorrecta. Inténtalo de nuevo.</div>
+      </div>
+    </div>
+
+    <!-- Confirmación acceso -->
+    <div id="loginSuccess" style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:32px 0;">
+      <div style="font-size:48px;">✅</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;color:var(--teal);">Acceso concedido</div>
+      <div style="font-size:14px;color:var(--gray-mid);">Bienvenido, Administrador</div>
+    </div>
+
+    <!-- Panel admin -->
+    <div id="adminPanel" style="display:none;">
+      <div class="admin-note">Al guardar un resultado, la llave se actualiza en tiempo real para todos los visitantes. El ganador avanza automáticamente.</div>
+      <div class="admin-section-title">Octavos de Final</div>
+      <div id="adminOctavos"></div>
+      <div class="admin-section-title">Cuartos de Final</div>
+      <div id="adminCuartos"></div>
+      <div class="admin-section-title">Semifinales</div>
+      <div id="adminSemis"></div>
+      <div class="admin-section-title">Final</div>
+      <div id="adminFinal"></div>
+      <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="btn btn-orange" onclick="resetTournament()">🔄 Reiniciar torneo</button>
+        <button class="btn btn-outline" onclick="closeAdminModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- Firebase SDK -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getDatabase, ref, set, onValue, get } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+// ══════════════════════════════════════════
+//  CONFIGURACIÓN FIREBASE
+// ══════════════════════════════════════════
+const firebaseConfig = {
+  apiKey: "AIzaSyBKWkLk14z4kwQ874HXrakVrH2LNHJ72ok",
+  authDomain: "fiesta-familiar-2026.firebaseapp.com",
+  databaseURL: "https://fiesta-familiar-2026-default-rtdb.firebaseio.com",
+  projectId: "fiesta-familiar-2026",
+  storageBucket: "fiesta-familiar-2026.firebasestorage.app",
+  messagingSenderId: "1021650557598",
+  appId: "1:1021650557598:web:3f61f48aa54d7f7bbbf98f"
+};
+
+const app = initializeApp(firebaseConfig);
+const db  = getDatabase(app);
+const TORNEO_REF = ref(db, 'torneo_futsal_varones');
+
+// ══════════════════════════════════════════
+//  CONSTANTES
+// ══════════════════════════════════════════
+const PASSWORD = 'FF2026civilUNSA';
+
+const INITIAL_TEAMS = [
+  'Los Ingenieros','Topografía FC','Hormigón Duro','Estructuras CF',
+  'Los Niveles','Hidráulica SC','Cimentadores','Geotecnia FC',
+  'Acero & Fuego','Resistencia FC','Los Viguetas','Concreto Armado',
+  'Los Planos','Demoledores FC','Materiales SC','Pavimentos FC'
+];
+
+// ══════════════════════════════════════════
+//  ESTADO POR DEFECTO
+// ══════════════════════════════════════════
+function defaultState() {
+  const octavos = [];
+  for (let i = 0; i < 8; i++) {
+    octavos.push({ id:`O${i+1}`, round:0, teamA:INITIAL_TEAMS[i*2], teamB:INITIAL_TEAMS[i*2+1], scoreA:null, scoreB:null, winner:null });
+  }
+  const cuartos = [];
+  for (let i = 0; i < 4; i++) {
+    cuartos.push({ id:`C${i+1}`, round:1, teamA:'Por definir', teamB:'Por definir', scoreA:null, scoreB:null, winner:null });
+  }
+  return {
+    octavos,
+    cuartos,
+    semis: [
+      { id:'S1', round:2, teamA:'Por definir', teamB:'Por definir', scoreA:null, scoreB:null, winner:null },
+      { id:'S2', round:2, teamA:'Por definir', teamB:'Por definir', scoreA:null, scoreB:null, winner:null }
+    ],
+    final: [
+      { id:'F1', round:3, teamA:'Por definir', teamB:'Por definir', scoreA:null, scoreB:null, winner:null }
+    ],
+    champion: null,
+    lastUpdate: null
+  };
+}
+
+let state = defaultState();
+let isLoggedIn = false;
+
+// ══════════════════════════════════════════
+//  FIREBASE: ESCUCHAR CAMBIOS EN TIEMPO REAL
+// ══════════════════════════════════════════
+function setStatus(type, msg) {
+  const dot  = document.getElementById('statusDot');
+  const text = document.getElementById('statusText');
+  dot.className  = 'status-dot ' + type;
+  text.innerHTML = msg;
+}
+
+onValue(TORNEO_REF, (snapshot) => {
+  if (snapshot.exists()) {
+    state = snapshot.val();
+    // Asegurar arrays (Firebase puede convertirlos a objetos)
+    ['octavos','cuartos','semis','final'].forEach(k => {
+      if (state[k] && !Array.isArray(state[k])) {
+        state[k] = Object.values(state[k]);
+      }
+    });
+  } else {
+    // Primera vez: inicializar en Firebase
+    state = defaultState();
+    set(TORNEO_REF, state);
+  }
+  renderBracket();
+  if (isLoggedIn) renderAdminPanel();
+  setStatus('green', '<strong>Conectado</strong> — Los resultados se sincronizan en tiempo real');
+}, (error) => {
+  setStatus('red', '<strong>Sin conexión</strong> — Verifica tu internet');
+  console.error('Firebase error:', error);
+});
+
+// ══════════════════════════════════════════
+//  FIREBASE: GUARDAR ESTADO
+// ══════════════════════════════════════════
+function saveState(st) {
+  st.lastUpdate = new Date().toISOString();
+  set(TORNEO_REF, st);
+}
+
+// ══════════════════════════════════════════
+//  LÓGICA DE AVANCE
+// ══════════════════════════════════════════
+function propagateWinners(st) {
+  for (let i = 0; i < 4; i++) {
+    const m1 = st.octavos[i*2], m2 = st.octavos[i*2+1], c = st.cuartos[i];
+    c.teamA = m1.winner || 'Por definir';
+    c.teamB = m2.winner || 'Por definir';
+    if (!m1.winner || !m2.winner) { c.scoreA=null; c.scoreB=null; c.winner=null; }
+  }
+  for (let i = 0; i < 2; i++) {
+    const m1 = st.cuartos[i*2], m2 = st.cuartos[i*2+1], s = st.semis[i];
+    s.teamA = m1.winner || 'Por definir';
+    s.teamB = m2.winner || 'Por definir';
+    if (!m1.winner || !m2.winner) { s.scoreA=null; s.scoreB=null; s.winner=null; }
+  }
+  const f = st.final[0];
+  f.teamA = st.semis[0].winner || 'Por definir';
+  f.teamB = st.semis[1].winner || 'Por definir';
+  if (!st.semis[0].winner || !st.semis[1].winner) { f.scoreA=null; f.scoreB=null; f.winner=null; }
+  st.champion = f.winner || null;
+}
+
+// ══════════════════════════════════════════
+//  RENDER BRACKET
+// ══════════════════════════════════════════
+function renderBracket() {
+  const container = document.getElementById('bracketView');
+  container.innerHTML = '';
+
+  const rounds = [
+    { label:'OCTAVOS DE FINAL', matches:state.octavos },
+    { label:'CUARTOS DE FINAL', matches:state.cuartos },
+    { label:'SEMIFINAL',        matches:state.semis   },
+    { label:'FINAL',            matches:state.final   }
+  ];
+
+  rounds.forEach((round, ri) => {
+    const roundDiv = document.createElement('div');
+    roundDiv.className = 'round';
+
+    const titleDiv = document.createElement('div');
+    titleDiv.className = 'round-title';
+    titleDiv.textContent = round.label;
+    roundDiv.appendChild(titleDiv);
+
+    const matchesDiv = document.createElement('div');
+    matchesDiv.className = 'round-matches';
+
+    round.matches.forEach(match => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'match-wrapper';
+
+      const card = document.createElement('div');
+      card.className = 'match-card' + (ri===3?' final-card':'') + (match.winner?' finished':'');
+
+      const idBar = document.createElement('div');
+      idBar.className = 'match-id';
+      idBar.textContent = `PARTIDO ${match.id}`;
+      card.appendChild(idBar);
+
+      const isFinished = match.winner !== null;
+      ['A','B'].forEach(side => {
+        const team  = side==='A' ? match.teamA : match.teamB;
+        const score = side==='A' ? match.scoreA : match.scoreB;
+        const isWinner = isFinished && match.winner === team;
+        const isLoser  = isFinished && match.winner !== team;
+        const isTbd    = team === 'Por definir';
+
+        const row = document.createElement('div');
+        row.className = 'match-team' + (isWinner?' winner-team':isLoser?' loser-team':'');
+
+        const nameEl = document.createElement('div');
+        nameEl.className = 'team-name' + (isTbd?' tbd':'');
+        nameEl.textContent = isTbd ? 'Por definir' : team;
+        nameEl.title = team;
+
+        const scoreEl = document.createElement('div');
+        scoreEl.className = 'team-score' + (isWinner?' winner':isLoser?' loser':'');
+        scoreEl.textContent = score !== null ? score : '–';
+
+        row.appendChild(nameEl);
+        row.appendChild(scoreEl);
+        card.appendChild(row);
+      });
+
+      wrapper.appendChild(card);
+      matchesDiv.appendChild(wrapper);
+    });
+
+    roundDiv.appendChild(matchesDiv);
+
+    if (ri === 3) {
+      const champBox = document.createElement('div');
+      champBox.className = 'champion-box';
+      champBox.style.marginTop = '12px';
+      champBox.innerHTML = `
+        <div class="trophy-icon">🏆</div>
+        <div class="champion-label">Campeón</div>
+        <div class="champion-name ${state.champion?'':'empty'}">${state.champion||'Por definir'}</div>
+      `;
+      roundDiv.appendChild(champBox);
+    }
+
+    container.appendChild(roundDiv);
+  });
+
+  const lu = document.getElementById('lastUpdate');
+  if (state.lastUpdate) {
+    const d = new Date(state.lastUpdate);
+    lu.textContent = `Última actualización: ${d.toLocaleTimeString('es-PE',{hour:'2-digit',minute:'2-digit',second:'2-digit'})}`;
+  }
+}
+
+// ══════════════════════════════════════════
+//  RENDER ADMIN PANEL
+// ══════════════════════════════════════════
+function renderAdminPanel() {
+  const sections = [
+    { id:'adminOctavos', matches:state.octavos },
+    { id:'adminCuartos', matches:state.cuartos },
+    { id:'adminSemis',   matches:state.semis   },
+    { id:'adminFinal',   matches:state.final   }
+  ];
+  sections.forEach(({ id, matches }) => {
+    const container = document.getElementById(id);
+    if (!container) return;
+    container.innerHTML = '';
+    matches.forEach(match => {
+      const row = document.createElement('div');
+      row.className = 'admin-match-row';
+      const tbd = match.teamA === 'Por definir' || match.teamB === 'Por definir';
+      row.innerHTML = `
+        <div class="admin-match-id">${match.id}</div>
+        <div class="admin-teams">
+          <div class="admin-team-name">${match.teamA}</div>
+          <input type="number" class="score-input" id="sa_${match.id}"
+            value="${match.scoreA !== null ? match.scoreA : ''}" min="0" max="99" ${tbd?'disabled':''}>
+          <span class="vs-label">:</span>
+          <input type="number" class="score-input" id="sb_${match.id}"
+            value="${match.scoreB !== null ? match.scoreB : ''}" min="0" max="99" ${tbd?'disabled':''}>
+          <div class="admin-team-name">${match.teamB}</div>
+        </div>
+        <button class="btn-save-match" onclick="window._saveMatch('${match.id}')" ${tbd?'disabled':''}>
+          Guardar
+        </button>
+      `;
+      container.appendChild(row);
+    });
+  });
+}
+
+window._saveMatch = function(matchId) {
+  const sa = document.getElementById(`sa_${matchId}`).value;
+  const sb = document.getElementById(`sb_${matchId}`).value;
+  if (sa===''||sb==='') { showToast('Ingresa ambos marcadores','error'); return; }
+  const saN = parseInt(sa), sbN = parseInt(sb);
+  if (isNaN(saN)||isNaN(sbN)||saN<0||sbN<0) { showToast('Marcadores inválidos','error'); return; }
+  if (saN===sbN) { showToast('No puede haber empate en eliminatoria','error'); return; }
+
+  const allMatches = [...state.octavos,...state.cuartos,...state.semis,...state.final];
+  const match = allMatches.find(m => m.id === matchId);
+  if (!match) return;
+
+  match.scoreA = saN;
+  match.scoreB = sbN;
+  match.winner = saN > sbN ? match.teamA : match.teamB;
+
+  propagateWinners(state);
+  saveState(state);
+  showToast(`✓ ${match.winner} avanza a la siguiente ronda`);
+};
+
+// ══════════════════════════════════════════
+//  ADMIN MODAL
+// ══════════════════════════════════════════
+window.openAdminModal = function() {
+  document.getElementById('adminModal').style.display = 'flex';
+  if (!isLoggedIn) {
+    document.getElementById('loginPanel').style.display  = 'block';
+    document.getElementById('adminPanel').style.display  = 'none';
+    document.getElementById('loginSuccess').style.display = 'none';
+  } else {
+    showAdminPanel();
+  }
+  document.getElementById('pwInput').value = '';
+  document.getElementById('loginError').style.display = 'none';
+  setTimeout(() => document.getElementById('pwInput').focus(), 100);
+};
+
+window.closeAdminModal = function() {
+  document.getElementById('adminModal').style.display = 'none';
+};
+
+window.doLogin = function() {
+  const pw = document.getElementById('pwInput').value;
+  if (pw === PASSWORD) {
+    isLoggedIn = true;
+    document.getElementById('loginError').style.display = 'none';
+    document.getElementById('loginPanel').style.display  = 'none';
+    const ok = document.getElementById('loginSuccess');
+    ok.style.display = 'flex';
+    setTimeout(() => { ok.style.display='none'; showAdminPanel(); }, 1400);
+  } else {
+    document.getElementById('loginError').style.display = 'block';
+    document.getElementById('pwInput').value = '';
+    document.getElementById('pwInput').focus();
+  }
+};
+
+function showAdminPanel() {
+  document.getElementById('loginPanel').style.display   = 'none';
+  document.getElementById('loginSuccess').style.display = 'none';
+  document.getElementById('adminPanel').style.display   = 'block';
+  renderAdminPanel();
+}
+
+window.resetTournament = function() {
+  if (!confirm('¿Reiniciar el torneo? Se borrarán TODOS los resultados.')) return;
+  const fresh = defaultState();
+  saveState(fresh);
+  showToast('Torneo reiniciado');
+};
+
+document.getElementById('adminModal').addEventListener('click', function(e) {
+  if (e.target === this) window.closeAdminModal();
+});
+
+// ══════════════════════════════════════════
+//  TOAST
+// ══════════════════════════════════════════
+function showToast(msg, type) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.background = type==='error' ? '#c0392b' : 'var(--teal)';
+  t.style.color      = type==='error' ? '#fff'    : 'var(--navy-dark)';
+  t.style.display    = 'block';
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.style.display='none', 3200);
+}
+
+// Render inicial mientras llega Firebase
+renderBracket();
+setStatus('yellow', 'Conectando con Firebase...');
+</script>
+</body>
+</html>
