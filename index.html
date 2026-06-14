@@ -3,687 +3,1236 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fiesta Familiar 2026 – FIC UNSA | Futsal Varones</title>
+<title>Fiesta Familiar 2026 – FIC UNSA</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy: #0d2a5e;
-    --navy-dark: #071840;
-    --orange: #f4621f;
-    --orange-light: #ff8c4b;
-    --teal: #1ab5a0;
-    --cream: #f5f0e8;
-    --white: #ffffff;
-    --gray-light: #e8e4da;
-    --gray-mid: #b0a99a;
-    --gray-dark: #4a453e;
-    --lose: #c0392b;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Barlow', sans-serif;
-    background-color: #0a1f4e;
-    background-image:
-      radial-gradient(ellipse at 20% 10%, rgba(244,98,31,0.12) 0%, transparent 55%),
-      radial-gradient(ellipse at 80% 90%, rgba(26,181,160,0.10) 0%, transparent 55%),
-      repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px),
-      repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px);
-    min-height: 100vh;
-    color: var(--white);
-  }
+:root {
+  --navy:#0a1f4e; --navy-dark:#071840;
+  --orange:#f4621f; --orange-light:#ff8c4b;
+  --teal:#1ab5a0;
+  --green:#27ae60; --green-light:#2ecc71;
+  --white:#ffffff; --cream:#f5f0e8;
+  --gray-mid:#b0a99a;
+  --lose:#c0392b;
+  --tab-futsal-v:#f4621f; --tab-futsal-d:#e91e8c;
+  --tab-voley:#1ab5a0;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Barlow',sans-serif;background-color:var(--navy);background-image:radial-gradient(ellipse at 20% 10%,rgba(244,98,31,.12) 0%,transparent 55%),radial-gradient(ellipse at 80% 90%,rgba(26,181,160,.10) 0%,transparent 55%);min-height:100vh;color:var(--white);}
 
-  /* HEADER */
-  header {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 16px 32px;
-    background: rgba(7,24,64,0.92);
-    border-bottom: 2px solid var(--orange);
-    position: sticky; top: 0; z-index: 100;
-    gap: 16px;
-  }
-  .header-left { display: flex; align-items: center; gap: 14px; }
-  .logo-circle {
-    width: 64px; height: 64px; border-radius: 50%;
-    border: 2px solid var(--orange); overflow: hidden; flex-shrink: 0;
-    background: var(--cream); display: flex; align-items: center; justify-content: center;
-  }
-  .logo-fallback {
-    font-family: 'Bebas Neue', sans-serif; font-size: 14px;
-    color: var(--navy); text-align: center; line-height: 1.2; padding: 4px;
-  }
-  .header-title h1 {
-    font-family: 'Bebas Neue', sans-serif; font-size: 26px;
-    letter-spacing: 2px; color: var(--white); line-height: 1;
-  }
-  .header-title h1 span { color: var(--orange); }
-  .header-title p { font-size: 11px; color: var(--teal); letter-spacing: 3px; text-transform: uppercase; margin-top: 3px; }
-  .header-right { display: flex; gap: 10px; align-items: center; }
-  .btn {
-    padding: 8px 18px; border-radius: 4px;
-    font-family: 'Barlow Condensed', sans-serif; font-size: 14px;
-    font-weight: 600; letter-spacing: 1px; cursor: pointer;
-    border: none; text-transform: uppercase; transition: all 0.2s;
-  }
-  .btn-orange { background: var(--orange); color: var(--white); }
-  .btn-orange:hover { background: var(--orange-light); }
-  .btn-outline { background: transparent; color: var(--teal); border: 1.5px solid var(--teal); }
-  .btn-outline:hover { background: rgba(26,181,160,0.12); }
-  .live-badge {
-    display: flex; align-items: center; gap: 6px;
-    font-family: 'Barlow Condensed', sans-serif; font-size: 13px;
-    font-weight: 700; letter-spacing: 2px; color: var(--teal); text-transform: uppercase;
-  }
-  .live-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--teal); animation: pulse 1.5s infinite;
-  }
-  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.4;transform:scale(0.7);} }
+/* HEADER */
+header{display:flex;align-items:center;justify-content:space-between;padding:13px 26px;background:rgba(7,24,64,.93);border-bottom:2px solid var(--orange);position:sticky;top:0;z-index:100;gap:12px;}
+.header-left{display:flex;align-items:center;gap:12px;}
+.logo-circle{width:58px;height:58px;border-radius:50%;border:2px solid var(--orange);overflow:hidden;flex-shrink:0;background:var(--cream);display:flex;align-items:center;justify-content:center;}
+.logo-circle img{width:100%;height:100%;object-fit:cover;}
+.logo-fallback{font-family:'Bebas Neue',sans-serif;font-size:12px;color:var(--navy);text-align:center;line-height:1.2;padding:3px;}
+.header-title h1{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;color:var(--white);line-height:1;}
+.header-title h1 span{color:var(--orange);}
+.header-title p{font-size:11px;color:var(--teal);letter-spacing:3px;text-transform:uppercase;margin-top:2px;}
+.header-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
 
-  /* MAIN */
-  main { padding: 28px 20px 60px; max-width: 1400px; margin: 0 auto; }
-  .section-label {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 11px;
-    font-weight: 700; letter-spacing: 4px; text-transform: uppercase;
-    color: var(--orange); margin-bottom: 8px;
-  }
-  .section-title {
-    font-family: 'Bebas Neue', sans-serif; font-size: 34px;
-    letter-spacing: 3px; color: var(--white); margin-bottom: 24px;
-  }
+/* BUTTONS */
+.btn{padding:8px 16px;border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:1px;cursor:pointer;border:none;text-transform:uppercase;transition:all .2s;white-space:nowrap;}
+.btn-orange{background:var(--orange);color:var(--white);}
+.btn-orange:hover{background:var(--orange-light);}
+.btn-outline-teal{background:transparent;color:var(--teal);border:1.5px solid var(--teal);}
+.btn-outline-teal:hover{background:rgba(26,181,160,.12);}
+.btn-green{background:var(--green);color:var(--white);}
+.btn-green:hover{background:var(--green-light);}
+.btn-outline-green{background:transparent;color:var(--green-light);border:1.5px solid var(--green-light);}
+.btn-outline-green:hover{background:rgba(46,204,113,.12);}
+.btn-sm{padding:6px 12px;font-size:13px;}
 
-  /* BRACKET */
-  .bracket-container { overflow-x: auto; padding-bottom: 16px; }
-  .bracket { display: flex; gap: 0; min-width: 920px; align-items: stretch; }
-  .round { display: flex; flex-direction: column; align-items: center; flex: 1; padding: 0 6px; }
-  .round-title {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 12px;
-    font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
-    color: var(--teal); margin-bottom: 14px; text-align: center;
-  }
-  .round-matches { display: flex; flex-direction: column; width: 100%; flex: 1; }
-  .match-wrapper { display: flex; align-items: center; justify-content: center; flex: 1; padding: 5px 0; }
-  .match-card {
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 6px; width: 158px; overflow: hidden; transition: border-color 0.2s;
-  }
-  .match-card:hover { border-color: rgba(244,98,31,0.4); }
-  .match-card.finished { border-color: rgba(26,181,160,0.3); }
-  .match-card.final-card { width: 175px; border: 1.5px solid var(--orange); }
-  .match-id {
-    font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--gray-mid); padding: 4px 8px;
-    background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-  .match-team {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 6px 10px; gap: 6px; border-bottom: 1px solid rgba(255,255,255,0.04);
-  }
-  .match-team:last-of-type { border-bottom: none; }
-  .team-name {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 13px;
-    font-weight: 600; color: var(--white); white-space: nowrap;
-    overflow: hidden; text-overflow: ellipsis; max-width: 98px; letter-spacing: 0.5px;
-  }
-  .team-name.tbd { color: var(--gray-mid); font-style: italic; }
-  .team-score {
-    font-family: 'Bebas Neue', sans-serif; font-size: 20px;
-    color: var(--white); min-width: 22px; text-align: right; line-height: 1;
-  }
-  .team-score.winner { color: var(--teal); }
-  .team-score.loser  { color: var(--lose); opacity: 0.7; }
-  .match-team.winner-team { background: rgba(26,181,160,0.08); }
-  .match-team.loser-team  { background: rgba(0,0,0,0.1); }
+.live-badge{display:flex;align-items:center;gap:5px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;color:var(--teal);text-transform:uppercase;}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);animation:pulse 1.5s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);}}
 
-  /* CHAMPION */
-  .champion-box {
-    background: linear-gradient(135deg, rgba(244,98,31,0.18), rgba(26,181,160,0.12));
-    border: 2px solid var(--orange); border-radius: 10px;
-    padding: 18px 20px; text-align: center; min-width: 175px; margin-top: 14px;
-  }
-  .champion-label {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 11px;
-    font-weight: 700; letter-spacing: 3px; color: var(--orange);
-    text-transform: uppercase; margin-bottom: 6px;
-  }
-  .champion-name { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 2px; color: var(--white); }
-  .champion-name.empty { color: var(--gray-mid); font-size: 16px; }
-  .trophy-icon { font-size: 26px; margin-bottom: 4px; }
-  .last-update { font-size: 12px; color: var(--gray-mid); margin-top: 14px; text-align: right; }
+/* TABS BAR */
+.tabs-bar{display:flex;background:rgba(7,24,64,.7);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;scrollbar-width:none;}
+.tabs-bar::-webkit-scrollbar{display:none;}
+.tab-btn{padding:13px 22px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray-mid);background:transparent;border:none;cursor:pointer;white-space:nowrap;border-bottom:3px solid transparent;transition:color .2s,border-color .2s;}
+.tab-btn:hover{color:var(--white);}
+.tab-btn.active-futsal-v{color:var(--tab-futsal-v);border-bottom-color:var(--tab-futsal-v);}
+.tab-btn.active-futsal-d{color:var(--tab-futsal-d);border-bottom-color:var(--tab-futsal-d);}
+.tab-btn.active-voley{color:var(--tab-voley);border-bottom-color:var(--tab-voley);}
 
-  /* CONNECTING LINES */
-  .bracket-svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+/* SPORT PANEL */
+.sport-panel{display:none;padding:22px 18px 60px;max-width:1400px;margin:0 auto;}
+.sport-panel.active{display:block;}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--orange);margin-bottom:5px;}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:3px;color:var(--white);margin-bottom:16px;}
 
-  /* STATUS BAR */
-  .status-bar {
-    display: flex; align-items: center; gap: 10px;
-    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 6px; padding: 10px 16px; margin-bottom: 20px; font-size: 13px;
-  }
-  .status-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-  .status-dot.green { background: var(--teal); animation: pulse 2s infinite; }
-  .status-dot.yellow { background: #f39c12; }
-  .status-dot.red { background: var(--lose); }
-  .status-text { color: var(--gray-mid); }
-  .status-text strong { color: var(--white); }
+/* STATUS */
+.status-bar{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:9px 14px;margin-bottom:16px;font-size:13px;}
+.status-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.status-dot.green{background:var(--teal);animation:pulse 2s infinite;}
+.status-dot.yellow{background:#f39c12;}
+.status-dot.red{background:var(--lose);}
+.status-text{color:var(--gray-mid);}
+.status-text strong{color:var(--white);}
 
-  /* MODAL */
-  .modal-overlay {
-    position: fixed; inset: 0; background: rgba(0,0,0,0.78);
-    z-index: 200; display: none; align-items: center; justify-content: center;
-    backdrop-filter: blur(4px);
-  }
-  .modal {
-    background: #0d1f4a; border: 1.5px solid var(--orange);
-    border-radius: 10px; width: 95%; max-width: 700px;
-    max-height: 92vh; overflow-y: auto; padding: 26px 30px;
-  }
-  .modal-header {
-    display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 14px;
-  }
-  .modal-title { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 2px; color: var(--orange); }
-  .modal-close { background: none; border: none; color: var(--gray-mid); font-size: 22px; cursor: pointer; line-height: 1; }
-  .modal-close:hover { color: var(--white); }
+/* BRACKET */
+.bracket-container{overflow-x:auto;padding-bottom:12px;}
+.bracket{display:flex;align-items:stretch;min-width:960px;}
+.round{display:flex;flex-direction:column;align-items:center;flex:1;padding:0 5px;}
+.round-title{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:10px;text-align:center;}
+.round-matches{display:flex;flex-direction:column;width:100%;flex:1;}
+.match-wrapper{display:flex;align-items:center;justify-content:center;flex:1;padding:4px 0;position:relative;}
+.connector-svg{position:absolute;right:-24px;top:0;width:24px;height:100%;z-index:1;pointer-events:none;overflow:visible;}
+.match-outer-wrap{display:flex;align-items:stretch;position:relative;z-index:2;}
+.match-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:7px;width:165px;overflow:hidden;transition:border-color .2s;}
+.match-card:hover{border-color:rgba(244,98,31,.4);}
+.match-card.finished{border-color:rgba(26,181,160,.35);}
+.match-card.final-card{width:178px;border:1.5px solid var(--orange);}
+.match-id{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray-mid);padding:4px 9px;background:rgba(0,0,0,.2);border-bottom:1px solid rgba(255,255,255,.06);}
+.match-team{display:flex;align-items:center;justify-content:space-between;padding:7px 9px;gap:4px;border-bottom:1px solid rgba(255,255,255,.04);}
+.match-team:last-of-type{border-bottom:none;}
+.team-name{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:600;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:105px;letter-spacing:.4px;}
+.team-name.tbd{color:var(--gray-mid);font-style:italic;}
+.team-score{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--white);min-width:22px;text-align:right;line-height:1;}
+.team-score.winner{color:var(--teal);}
+.team-score.loser{color:var(--lose);opacity:.7;}
+.match-team.winner-team{background:rgba(26,181,160,.08);}
+.match-team.loser-team{background:rgba(0,0,0,.1);}
+.champion-box{background:linear-gradient(135deg,rgba(244,98,31,.18),rgba(26,181,160,.12));border:2px solid var(--orange);border-radius:10px;padding:16px 18px;text-align:center;min-width:178px;margin-top:10px;}
+.champion-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;color:var(--orange);text-transform:uppercase;margin-bottom:5px;}
+.champion-name{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;color:var(--white);}
+.champion-name.empty{color:var(--gray-mid);font-size:15px;}
+.trophy-icon{font-size:26px;margin-bottom:4px;}
+.last-update{font-size:12px;color:var(--gray-mid);margin-top:10px;text-align:right;}
 
-  /* LOGIN */
-  .login-form { display: flex; flex-direction: column; gap: 14px; max-width: 320px; margin: 0 auto; }
-  .form-label { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 4px; }
-  .form-input {
-    width: 100%; padding: 10px 14px;
-    background: rgba(255,255,255,0.07); border: 1.5px solid rgba(255,255,255,0.15);
-    border-radius: 5px; color: var(--white);
-    font-family: 'Barlow', sans-serif; font-size: 14px; outline: none;
-  }
-  .form-input:focus { border-color: var(--orange); }
-  .form-error { color: #e74c3c; font-size: 13px; text-align: center; display: none; }
+/* HORA / CANCHA en tarjeta */
+.match-meta-hora{font-family:'Bebas Neue',sans-serif;font-size:16px;font-weight:700;color:var(--teal);letter-spacing:1px;text-align:center;padding:5px 9px 4px;background:rgba(26,181,160,.1);border-top:1px solid rgba(26,181,160,.2);}
+.match-cancha-badge{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:0;
+  color:var(--navy-dark);background:var(--orange);
+  padding:8px 4px;min-width:22px;
+  border-radius:0 7px 7px 0;
+  flex-shrink:0;
+  line-height:1.15;
+  text-align:center;
+}
+.match-cancha-badge span{display:block;}
 
-  /* ADMIN */
-  .admin-match-row {
-    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 6px; padding: 11px 14px; margin-bottom: 9px;
-    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
-  }
-  .admin-match-id { font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; color:var(--orange); min-width:70px; }
-  .admin-teams { display:flex; align-items:center; gap:8px; flex:1; min-width:200px; }
-  .admin-team-name { font-size:13px; font-weight:600; color:var(--white); flex:1; text-align:center; }
-  .score-input {
-    width:50px; padding:5px 6px;
-    background:rgba(255,255,255,0.1); border:1.5px solid rgba(255,255,255,0.2);
-    border-radius:4px; color:var(--white);
-    font-family:'Bebas Neue',sans-serif; font-size:22px; text-align:center; outline:none;
-  }
-  .score-input:focus { border-color: var(--teal); }
-  .vs-label { font-family:'Bebas Neue',sans-serif; font-size:14px; color:var(--gray-mid); }
-  .btn-save-match {
-    padding:7px 14px; background:var(--teal); color:var(--navy-dark);
-    border:none; border-radius:4px;
-    font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700;
-    letter-spacing:1px; cursor:pointer; text-transform:uppercase; transition:opacity 0.2s;
-  }
-  .btn-save-match:hover { opacity:0.85; }
-  .btn-save-match:disabled { opacity:0.35; cursor:default; }
-  .admin-section-title {
-    font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700;
-    letter-spacing:3px; text-transform:uppercase; color:var(--teal);
-    margin:18px 0 9px; padding-bottom:5px; border-bottom:1px solid rgba(26,181,160,0.2);
-  }
-  .admin-note { font-size:12px; color:var(--gray-mid); font-style:italic; margin-bottom:14px; line-height:1.6; }
+/* GROUP STAGE (Futsal Damas) */
+.groups-layout{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start;}
+.groups-matches-col{flex:1;min-width:300px;}
+.groups-table-col{flex:1;min-width:300px;}
+.group-match-row{
+  display:flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  border-radius:7px;padding:10px 14px;margin-bottom:9px;
+  transition:border-color .2s;
+}
+.group-match-row.finished{border-color:rgba(26,181,160,.35);}
+.group-match-id{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray-mid);min-width:32px;}
+.group-match-teams{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;}
+.group-team-name{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:600;color:var(--white);text-align:right;flex:1;}
+.group-team-name.right-side{text-align:left;}
+.group-team-name.winner{color:var(--teal);}
+.group-score{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--white);min-width:26px;text-align:center;}
+.group-score.winner{color:var(--teal);}
+.group-vs{font-family:'Bebas Neue',sans-serif;font-size:13px;color:var(--gray-mid);}
+.group-match-meta{display:flex;flex-direction:column;align-items:flex-end;gap:2px;min-width:60px;}
+.group-meta-hora{font-family:'Bebas Neue',sans-serif;font-size:14px;color:var(--teal);}
+.group-meta-cancha{font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--gray-mid);letter-spacing:.5px;}
 
-  /* TOAST */
-  .toast {
-    position:fixed; bottom:24px; right:24px;
-    padding:10px 20px; border-radius:5px;
-    font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:700; letter-spacing:1px;
-    display:none; z-index:999;
-  }
+.standings-table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.04);border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);}
+.standings-table th{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);background:rgba(26,181,160,.08);padding:9px 8px;text-align:center;border-bottom:1px solid rgba(255,255,255,.08);}
+.standings-table th:first-child{text-align:left;padding-left:14px;}
+.standings-table td{font-family:'Barlow Condensed',sans-serif;font-size:14px;color:var(--white);padding:9px 8px;text-align:center;border-bottom:1px solid rgba(255,255,255,.05);}
+.standings-table td:first-child{text-align:left;font-weight:600;padding-left:14px;}
+.standings-table tr:last-child td{border-bottom:none;}
+.standings-table tr.qualified{background:rgba(26,181,160,.08);}
+.standings-table tr.qualified td:first-child{color:var(--teal);}
+.standings-pts{font-weight:700;color:var(--orange);}
 
-  /* FOOTER */
-  footer { text-align:center; padding:22px; font-size:12px; color:var(--gray-mid); border-top:1px solid rgba(255,255,255,0.06); letter-spacing:1px; }
-  footer span { color:var(--orange); }
+.final-section{margin-top:24px;}
 
-  @media(max-width:600px){
-    header { padding:12px 14px; }
-    .header-title h1 { font-size:19px; }
-    main { padding:16px 10px 40px; }
-    .section-title { font-size:26px; }
-    .modal { padding:18px 14px; }
-  }
+/* MODAL BASE */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.80);z-index:200;display:none;align-items:center;justify-content:center;backdrop-filter:blur(4px);}
+.modal{background:#0d1f4a;border-radius:10px;width:95%;max-width:700px;max-height:93vh;overflow-y:auto;padding:22px 26px;}
+.modal-admin{border:1.5px solid var(--orange);}
+.modal-results{border:1.5px solid var(--green);}
+.modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:12px;}
+.modal-title-admin{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px;color:var(--orange);}
+.modal-title-results{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px;color:var(--green-light);}
+.modal-close{background:none;border:none;color:var(--gray-mid);font-size:22px;cursor:pointer;line-height:1;}
+.modal-close:hover{color:var(--white);}
+
+/* LOGIN */
+.login-form{display:flex;flex-direction:column;gap:13px;max-width:290px;margin:0 auto;}
+.form-label{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:3px;}
+.form-input{width:100%;padding:10px 13px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.15);border-radius:5px;color:var(--white);font-family:'Barlow',sans-serif;font-size:15px;outline:none;}
+.form-input:focus{border-color:var(--orange);}
+.form-input-green:focus{border-color:var(--green);}
+.form-error{color:#e74c3c;font-size:13px;text-align:center;display:none;}
+
+/* SPORT SELECTOR (inside modals) */
+.modal-sport-tabs{display:flex;gap:5px;margin-bottom:16px;flex-wrap:wrap;}
+.modal-sport-tab{padding:6px 14px;border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;border:1.5px solid rgba(255,255,255,.15);background:transparent;color:var(--gray-mid);transition:all .2s;}
+.modal-sport-tab.active-admin{background:var(--orange);color:var(--white);border-color:var(--orange);}
+.modal-sport-tab.active-results{background:var(--green);color:var(--white);border-color:var(--green);}
+
+/* ADMIN SETUP */
+.admin-section-title{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin:14px 0 7px;padding-bottom:4px;border-bottom:1px solid rgba(26,181,160,.2);}
+.admin-note{font-size:12px;color:var(--gray-mid);font-style:italic;margin-bottom:10px;line-height:1.6;}
+.teams-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:7px;margin-bottom:11px;}
+.team-input-wrap{display:flex;flex-direction:column;gap:2px;}
+.team-slot-label{font-size:11px;color:var(--gray-mid);letter-spacing:1px;}
+.team-input{width:100%;padding:7px 10px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.12);border-radius:4px;color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;outline:none;}
+.team-input:focus{border-color:var(--teal);}
+.matchup-row{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:5px;padding:9px 12px;margin-bottom:6px;flex-wrap:wrap;}
+.matchup-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;color:var(--orange);min-width:50px;}
+.matchup-select{flex:1;min-width:105px;padding:6px 8px;background:#0d1f4a;border:1.5px solid rgba(255,255,255,.25);border-radius:4px;color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:14px;outline:none;cursor:pointer;}
+.matchup-select option{background:#0d1f4a;color:var(--white);}
+.matchup-select:focus{border-color:var(--teal);}
+.vs-text{font-family:'Bebas Neue',sans-serif;font-size:14px;color:var(--gray-mid);}
+.matchup-meta{display:flex;align-items:center;gap:7px;width:100%;margin-top:5px;padding-top:5px;border-top:1px solid rgba(255,255,255,.06);}
+.matchup-meta-label{font-size:11px;color:var(--gray-mid);letter-spacing:1px;white-space:nowrap;}
+.hora-select{width:115px;padding:6px 8px;background:#0d1f4a;border:1.5px solid rgba(255,255,255,.25);border-radius:4px;color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:14px;outline:none;cursor:pointer;color-scheme:dark;}
+.hora-select:focus{border-color:var(--teal);}
+.cancha-select{padding:6px 8px;background:#0d1f4a;border:1.5px solid rgba(255,255,255,.25);border-radius:4px;color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:14px;outline:none;cursor:pointer;}
+.cancha-select option{background:#0d1f4a;color:var(--white);}
+.cancha-select:focus{border-color:var(--teal);}
+
+/* RESULTS */
+.results-section-title{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--green-light);margin:14px 0 7px;padding-bottom:4px;border-bottom:1px solid rgba(46,204,113,.2);}
+.admin-match-row{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:10px 13px;margin-bottom:7px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.admin-match-id{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;color:var(--green-light);min-width:52px;}
+.admin-teams{display:flex;align-items:center;gap:6px;flex:1;min-width:175px;}
+.admin-team-name{font-size:13px;font-weight:600;color:var(--white);flex:1;text-align:center;}
+.score-input{width:50px;padding:5px 4px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);border-radius:4px;color:var(--white);font-family:'Bebas Neue',sans-serif;font-size:22px;text-align:center;outline:none;}
+.score-input:focus{border-color:var(--green);}
+.vs-label{font-family:'Bebas Neue',sans-serif;font-size:13px;color:var(--gray-mid);}
+.btn-save-match{padding:6px 13px;background:var(--green);color:var(--white);border:none;border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;cursor:pointer;text-transform:uppercase;transition:opacity .2s;}
+.btn-save-match:hover{opacity:.85;}
+.btn-save-match:disabled{opacity:.35;cursor:default;}
+
+/* QUALIFY SELECTOR (Futsal Damas Config) */
+.qualify-row{display:flex;align-items:center;gap:10px;background:rgba(244,98,31,.06);border:1px solid rgba(244,98,31,.25);border-radius:6px;padding:10px 14px;margin-bottom:8px;flex-wrap:wrap;}
+.qualify-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;color:var(--orange);min-width:90px;}
+
+/* TOAST */
+.toast{position:fixed;bottom:20px;right:20px;padding:9px 18px;border-radius:5px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;display:none;z-index:999;}
+
+footer{text-align:center;padding:18px;font-size:11px;color:var(--gray-mid);border-top:1px solid rgba(255,255,255,.06);letter-spacing:1px;}
+footer span{color:var(--orange);}
+
+@media(max-width:580px){
+  header{padding:10px 12px;}
+  .header-title h1{font-size:17px;}
+  .btn{padding:6px 10px;font-size:11px;}
+  .sport-panel{padding:14px 9px 40px;}
+  .modal{padding:16px 13px;}
+  .groups-layout{flex-direction:column;}
+}
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="header-left">
-    <div class="logo-circle">
-      <div class="logo-fallback">FIESTA<br>FAM</div>
-    </div>
+    <div class="logo-circle"><img src="data:image/jpeg;base64,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" alt="Logo Fiesta Familiar 2026"></div>
     <div class="header-title">
       <h1>Fiesta <span>Familiar</span> 2026</h1>
-      <p>⚽ Futsal Varones · FIC UNSA</p>
+      <p>🏆 Campeonato Deportivo · FIC UNSA</p>
     </div>
   </div>
   <div class="header-right">
     <div class="live-badge"><div class="live-dot"></div>En vivo</div>
-    <button class="btn btn-outline" onclick="openAdminModal()">Admin</button>
+    <button class="btn btn-green" onclick="openResultsModal()">📋 Resultados</button>
+    <button class="btn btn-outline-teal" onclick="openAdminModal()">⚙️ Config</button>
   </div>
 </header>
 
-<main>
-  <div class="section-label">Campeonato Deportivo 2026</div>
-  <div class="section-title">LLAVE ELIMINATORIA</div>
+<!-- SPORT TABS -->
+<div class="tabs-bar">
+  <button class="tab-btn" id="tab-futsal-v" onclick="switchTab('futsal-v')">⚽ Futsal Varones</button>
+  <button class="tab-btn" id="tab-futsal-d" onclick="switchTab('futsal-d')">⚽ Futsal Damas</button>
+  <button class="tab-btn" id="tab-voley"    onclick="switchTab('voley')"  >🏐 Vóley</button>
+</div>
 
-  <div class="status-bar" id="statusBar">
-    <div class="status-dot yellow" id="statusDot"></div>
-    <div class="status-text" id="statusText">Conectando con Firebase...</div>
-  </div>
+<!-- PANELS -->
+<div class="sport-panel" id="panel-futsal-v"></div>
+<div class="sport-panel" id="panel-futsal-d"></div>
+<div class="sport-panel" id="panel-voley"></div>
 
-  <div class="bracket-container">
-    <div class="bracket" id="bracketView"></div>
-  </div>
-  <div class="last-update" id="lastUpdate"></div>
-</main>
+<footer><p>Fiesta Familiar 2026 · <span>FIC UNSA</span> · Facultad de Ingeniería Civil · UNSA</p></footer>
 
-<footer>
-  <p>Fiesta Familiar 2026 · <span>FIC UNSA</span> · Facultad de Ingeniería Civil · UNSA</p>
-</footer>
-
-<!-- ADMIN MODAL -->
+<!-- ═══ MODAL CONFIGURACIÓN (naranja) ═══ -->
 <div class="modal-overlay" id="adminModal">
-  <div class="modal">
+  <div class="modal modal-admin">
     <div class="modal-header">
-      <div class="modal-title">Panel Administrador</div>
+      <div class="modal-title-admin">⚙️ Configuración</div>
       <button class="modal-close" onclick="closeAdminModal()">✕</button>
     </div>
-
-    <!-- Login -->
-    <div id="loginPanel">
+    <!-- Login admin -->
+    <div id="adminLoginPanel">
       <div class="login-form">
         <div>
-          <div class="form-label">Contraseña</div>
-          <input type="password" class="form-input" id="pwInput" placeholder="Ingresa la contraseña"
-            onkeydown="if(event.key==='Enter') doLogin()">
+          <div class="form-label">Contraseña de configuración</div>
+          <input type="password" class="form-input" id="adminPwInput" placeholder="Contraseña"
+            onkeydown="if(event.key==='Enter') doAdminLogin()">
         </div>
-        <button class="btn btn-orange" onclick="doLogin()">Ingresar</button>
-        <div class="form-error" id="loginError">⚠ Contraseña incorrecta. Inténtalo de nuevo.</div>
+        <button class="btn btn-orange" onclick="doAdminLogin()">Ingresar</button>
+        <div class="form-error" id="adminLoginError">⚠ Contraseña incorrecta.</div>
       </div>
     </div>
-
-    <!-- Confirmación acceso -->
-    <div id="loginSuccess" style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:32px 0;">
-      <div style="font-size:48px;">✅</div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;color:var(--teal);">Acceso concedido</div>
-      <div style="font-size:14px;color:var(--gray-mid);">Bienvenido, Administrador</div>
+    <!-- Confirmación admin -->
+    <div id="adminLoginSuccess" style="display:none;flex-direction:column;align-items:center;gap:10px;padding:26px 0;">
+      <div style="font-size:42px;">✅</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:var(--teal);">Acceso concedido</div>
+      <div style="font-size:12px;color:var(--gray-mid);">Bienvenido, Administrador</div>
     </div>
-
     <!-- Panel admin -->
     <div id="adminPanel" style="display:none;">
-      <div class="admin-note">Al guardar un resultado, la llave se actualiza en tiempo real para todos los visitantes. El ganador avanza automáticamente.</div>
-      <div class="admin-section-title">Octavos de Final</div>
-      <div id="adminOctavos"></div>
-      <div class="admin-section-title">Cuartos de Final</div>
-      <div id="adminCuartos"></div>
-      <div class="admin-section-title">Semifinales</div>
-      <div id="adminSemis"></div>
-      <div class="admin-section-title">Final</div>
-      <div id="adminFinal"></div>
-      <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;">
-        <button class="btn btn-orange" onclick="resetTournament()">🔄 Reiniciar torneo</button>
-        <button class="btn btn-outline" onclick="closeAdminModal()">Cerrar</button>
+      <div class="modal-sport-tabs" id="adminSportTabs">
+        <button class="modal-sport-tab active-admin" onclick="switchAdminTab('futsal-v',this)">⚽ Futsal V</button>
+        <button class="modal-sport-tab" onclick="switchAdminTab('futsal-d',this)">⚽ Futsal D</button>
+        <button class="modal-sport-tab" onclick="switchAdminTab('voley',this)">🏐 Vóley</button>
+      </div>
+
+      <!-- Contenido para deportes tipo BRACKET (futsal-v, voley) -->
+      <div id="adminBracketContent">
+        <div class="admin-section-title">① Equipos participantes</div>
+        <div class="admin-note">Escribe el nombre de cada equipo y guarda antes de definir los cruces.</div>
+        <div id="teamsGrid"></div>
+        <button class="btn btn-orange btn-sm" onclick="saveTeams()">Guardar equipos</button>
+        <div class="admin-section-title" style="margin-top:18px;">② Enfrentamientos (primera ronda)</div>
+        <div class="admin-note">Selecciona qué equipo enfrenta a quién en cada partido.</div>
+        <div id="matchupsGrid"></div>
+        <button class="btn btn-orange btn-sm" onclick="saveMatchups()">Guardar cruces</button>
+        <div class="admin-section-title" style="margin-top:18px;">③ Horarios y canchas</div>
+        <div class="admin-note">Asigna hora de inicio y cancha a cada partido de todas las rondas.</div>
+        <div id="scheduleGrid"></div>
+        <button class="btn btn-orange btn-sm" onclick="saveSchedule()">Guardar horarios</button>
+      </div>
+
+      <!-- Contenido para deportes tipo GROUPS (futsal-d) -->
+      <div id="adminGroupsContent" style="display:none;">
+        <div class="admin-section-title">① Equipos participantes (4)</div>
+        <div class="admin-note">Escribe el nombre de cada equipo. Se generan automáticamente los 6 partidos de todos contra todos.</div>
+        <div id="teamsGridGroups"></div>
+        <button class="btn btn-orange btn-sm" onclick="saveTeamsGroups()">Guardar equipos</button>
+
+        <div class="admin-section-title" style="margin-top:18px;">② Horarios y canchas (fase de grupos)</div>
+        <div class="admin-note">Asigna hora y cancha a cada uno de los 6 partidos.</div>
+        <div id="scheduleGridGroups"></div>
+        <button class="btn btn-orange btn-sm" onclick="saveScheduleGroups()">Guardar horarios</button>
+
+        <div class="admin-section-title" style="margin-top:18px;">③ Definir Final</div>
+        <div class="admin-note">Cuando termine la fase de grupos, selecciona los 2 equipos que jugarán la Final y asigna su horario.</div>
+        <div id="finalSetupGroups"></div>
+        <button class="btn btn-orange btn-sm" onclick="saveFinalGroups()">Guardar Final</button>
+      </div>
+
+      <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn btn-outline-teal btn-sm" onclick="resetSport()">🔄 Reiniciar deporte</button>
+        <button class="btn btn-outline-teal btn-sm" onclick="closeAdminModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MODAL RESULTADOS (verde) ═══ -->
+<div class="modal-overlay" id="resultsModal">
+  <div class="modal modal-results">
+    <div class="modal-header">
+      <div class="modal-title-results">📋 Ingresar Resultados</div>
+      <button class="modal-close" onclick="closeResultsModal()">✕</button>
+    </div>
+    <!-- Login resultados -->
+    <div id="resultsLoginPanel">
+      <div class="login-form">
+        <div>
+          <div class="form-label" style="color:var(--green-light);">Contraseña de resultados</div>
+          <input type="password" class="form-input form-input-green" id="resultsPwInput" placeholder="Contraseña"
+            onkeydown="if(event.key==='Enter') doResultsLogin()">
+        </div>
+        <button class="btn btn-green" onclick="doResultsLogin()">Ingresar</button>
+        <div class="form-error" id="resultsLoginError">⚠ Contraseña incorrecta.</div>
+      </div>
+    </div>
+    <!-- Confirmación resultados -->
+    <div id="resultsLoginSuccess" style="display:none;flex-direction:column;align-items:center;gap:10px;padding:26px 0;">
+      <div style="font-size:42px;">✅</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:var(--green-light);">Listo para ingresar</div>
+      <div style="font-size:12px;color:var(--gray-mid);">Ingresa los resultados de cada partido</div>
+    </div>
+    <!-- Panel resultados -->
+    <div id="resultsPanel" style="display:none;">
+      <div class="modal-sport-tabs" id="resultsSportTabs">
+        <button class="modal-sport-tab active-results" onclick="switchResultsTab('futsal-v',this)">⚽ Futsal V</button>
+        <button class="modal-sport-tab" onclick="switchResultsTab('futsal-d',this)">⚽ Futsal D</button>
+        <button class="modal-sport-tab" onclick="switchResultsTab('voley',this)">🏐 Vóley</button>
+      </div>
+      <div class="admin-note" style="color:var(--gray-mid);">Al guardar, el resultado se sincroniza en tiempo real para todos los visitantes.</div>
+      <div id="resultsMatchesContainer"></div>
+      <div style="margin-top:14px;">
+        <button class="btn btn-outline-green btn-sm" onclick="closeResultsModal()">Cerrar</button>
       </div>
     </div>
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
-
-<!-- Firebase SDK -->
+<!-- FIREBASE -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getDatabase, ref, set, onValue, get } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-// ══════════════════════════════════════════
-//  CONFIGURACIÓN FIREBASE
-// ══════════════════════════════════════════
 const firebaseConfig = {
-  apiKey: "AIzaSyBKWkLk14z4kwQ874HXrakVrH2LNHJ72ok",
-  authDomain: "fiesta-familiar-2026.firebaseapp.com",
-  databaseURL: "https://fiesta-familiar-2026-default-rtdb.firebaseio.com",
-  projectId: "fiesta-familiar-2026",
-  storageBucket: "fiesta-familiar-2026.firebasestorage.app",
-  messagingSenderId: "1021650557598",
-  appId: "1:1021650557598:web:3f61f48aa54d7f7bbbf98f"
+  apiKey:"AIzaSyBKWkLk14z4kwQ874HXrakVrH2LNHJ72ok",
+  authDomain:"fiesta-familiar-2026.firebaseapp.com",
+  databaseURL:"https://fiesta-familiar-2026-default-rtdb.firebaseio.com",
+  projectId:"fiesta-familiar-2026",
+  storageBucket:"fiesta-familiar-2026.firebasestorage.app",
+  messagingSenderId:"1021650557598",
+  appId:"1:1021650557598:web:3f61f48aa54d7f7bbbf98f"
+};
+const fbApp = initializeApp(firebaseConfig);
+const db    = getDatabase(fbApp);
+
+// ═══════════════════════════════
+//  PASSWORDS
+// ═══════════════════════════════
+const PW_ADMIN   = 'FF2026civilUNSA';
+const PW_RESULTS = 'civil2022';
+
+// ═══════════════════════════════
+//  CANCHAS
+// ═══════════════════════════════
+const CANCHAS = ['Cancha 1','Cancha 2','Cancha 3','Cancha 4','Cancha 5','Cancha Sint.'];
+
+// ═══════════════════════════════
+//  SPORTS CONFIG
+//  type: 'bracket' (llave eliminatoria dinámica) | 'groups' (todos contra todos + final)
+// ═══════════════════════════════
+const SPORTS = {
+  'futsal-v':{ label:'Futsal Varones', icon:'⚽', teams:16, type:'bracket' },
+  'futsal-d':{ label:'Futsal Damas',   icon:'⚽', teams:4,  type:'groups'  },
+  'voley':   { label:'Vóley',          icon:'🏐', teams:8,  type:'bracket' }
 };
 
-const app = initializeApp(firebaseConfig);
-const db  = getDatabase(app);
-const TORNEO_REF = ref(db, 'torneo_futsal_varones');
+// ═══════════════════════════════
+//  STATE
+// ═══════════════════════════════
+const states = {};
 
-// ══════════════════════════════════════════
-//  CONSTANTES
-// ══════════════════════════════════════════
-const PASSWORD = 'FF2026civilUNSA';
+function blankTeams(n){ return Array.from({length:n},(_,i)=>`Equipo ${i+1}`); }
 
-const INITIAL_TEAMS = [
-  'Los Ingenieros','Topografía FC','Hormigón Duro','Estructuras CF',
-  'Los Niveles','Hidráulica SC','Cimentadores','Geotecnia FC',
-  'Acero & Fuego','Resistencia FC','Los Viguetas','Concreto Armado',
-  'Los Planos','Demoledores FC','Materiales SC','Pavimentos FC'
-];
+function mkMatch(id,teamA,teamB,extra={}){
+  return {id,teamA,teamB,scoreA:null,scoreB:null,winner:null,hora:'',cancha:'',...extra};
+}
 
-// ══════════════════════════════════════════
-//  ESTADO POR DEFECTO
-// ══════════════════════════════════════════
-function defaultState() {
-  const octavos = [];
-  for (let i = 0; i < 8; i++) {
-    octavos.push({ id:`O${i+1}`, round:0, teamA:INITIAL_TEAMS[i*2], teamB:INITIAL_TEAMS[i*2+1], scoreA:null, scoreB:null, winner:null });
+// Etiquetas según cuántas rondas faltan hasta la final (1=Final,2=Semifinal,3=Cuartos,4=Octavos)
+const ROUND_LABELS = {1:'FINAL',2:'SEMIFINAL',3:'CUARTOS DE FINAL',4:'OCTAVOS DE FINAL'};
+const ROUND_IDS    = {4:'P',3:'Q',2:'S',1:'F'};
+
+// ─── BRACKET dinámico (futsal-v 16 equipos, voley 8 equipos) ───
+function buildBracket(teams){
+  const n = teams.length;
+  const totalRounds = Math.log2(n); // 16->4, 8->3, 4->2
+  const rounds = [];
+  for(let r = totalRounds; r >= 1; r--){
+    const nMatches = Math.pow(2, r-1);
+    const prefix = ROUND_IDS[r] || `R${r}`;
+    const matches = Array.from({length:nMatches},(_,i)=>{
+      if(r === totalRounds){
+        return mkMatch(`${prefix}${i+1}`, teams[i*2]||`Equipo ${i*2+1}`, teams[i*2+1]||`Equipo ${i*2+2}`);
+      }
+      return mkMatch(`${prefix}${i+1}`, 'Por definir','Por definir');
+    });
+    rounds.push({ key:`r${r}`, label: ROUND_LABELS[r] || `RONDA ${r}`, matches });
   }
-  const cuartos = [];
-  for (let i = 0; i < 4; i++) {
-    cuartos.push({ id:`C${i+1}`, round:1, teamA:'Por definir', teamB:'Por definir', scoreA:null, scoreB:null, winner:null });
-  }
+  return { teams, rounds, champion:null, lastUpdate:null };
+}
+
+// ─── GROUPS (futsal-d: 4 equipos, todos contra todos = 6 partidos) ───
+// Pares fijos round-robin para 4 equipos (índices 0-3 sobre el array teams)
+const GROUP_PAIRS = [[0,1],[2,3],[0,2],[1,3],[0,3],[1,2]];
+
+function buildGroups(teams){
+  const matches = GROUP_PAIRS.map((pair,i)=>
+    mkMatch(`G${i+1}`, teams[pair[0]]||`Equipo ${pair[0]+1}`, teams[pair[1]]||`Equipo ${pair[1]+1}`)
+  );
   return {
-    octavos,
-    cuartos,
-    semis: [
-      { id:'S1', round:2, teamA:'Por definir', teamB:'Por definir', scoreA:null, scoreB:null, winner:null },
-      { id:'S2', round:2, teamA:'Por definir', teamB:'Por definir', scoreA:null, scoreB:null, winner:null }
-    ],
-    final: [
-      { id:'F1', round:3, teamA:'Por definir', teamB:'Por definir', scoreA:null, scoreB:null, winner:null }
-    ],
+    teams,
+    groupMatches: matches,
+    final: mkMatch('F1','Por definir','Por definir'),
     champion: null,
     lastUpdate: null
   };
 }
 
-let state = defaultState();
-let isLoggedIn = false;
-
-// ══════════════════════════════════════════
-//  FIREBASE: ESCUCHAR CAMBIOS EN TIEMPO REAL
-// ══════════════════════════════════════════
-function setStatus(type, msg) {
-  const dot  = document.getElementById('statusDot');
-  const text = document.getElementById('statusText');
-  dot.className  = 'status-dot ' + type;
-  text.innerHTML = msg;
+function defaultState(sportId){
+  const sp = SPORTS[sportId];
+  const teams = blankTeams(sp.teams);
+  return sp.type==='groups' ? buildGroups(teams) : buildBracket(teams);
 }
 
-onValue(TORNEO_REF, (snapshot) => {
-  if (snapshot.exists()) {
-    state = snapshot.val();
-    // Asegurar arrays (Firebase puede convertirlos a objetos)
-    ['octavos','cuartos','semis','final'].forEach(k => {
-      if (state[k] && !Array.isArray(state[k])) {
-        state[k] = Object.values(state[k]);
+// ═══════════════════════════════
+//  FIREBASE LISTENERS
+// ═══════════════════════════════
+Object.keys(SPORTS).forEach(sid => {
+  states[sid] = defaultState(sid);
+  const fbRef = ref(db, `torneo_${sid}_v2`);
+  onValue(fbRef, snap => {
+    if(snap.exists()){
+      const d = snap.val();
+      if(Array.isArray(d.rounds)){
+        d.rounds.forEach(rd=>{ if(rd.matches && !Array.isArray(rd.matches)) rd.matches=Object.values(rd.matches); });
       }
-    });
-  } else {
-    // Primera vez: inicializar en Firebase
-    state = defaultState();
-    set(TORNEO_REF, state);
-  }
-  renderBracket();
-  if (isLoggedIn) renderAdminPanel();
-  setStatus('green', '<strong>Conectado</strong> — Los resultados se sincronizan en tiempo real');
-}, (error) => {
-  setStatus('red', '<strong>Sin conexión</strong> — Verifica tu internet');
-  console.error('Firebase error:', error);
+      if(d.groupMatches && !Array.isArray(d.groupMatches)) d.groupMatches=Object.values(d.groupMatches);
+      if(d.teams && !Array.isArray(d.teams)) d.teams=Object.values(d.teams);
+      states[sid]=d;
+    } else {
+      set(fbRef, states[sid]);
+    }
+    renderPanel(sid);
+    if(window._resultsOpen && window._resultsSport===sid) renderResultsMatches(sid);
+    setStatus(sid,'green','<strong>Conectado</strong> · resultados en tiempo real');
+  }, ()=>setStatus(sid,'red','<strong>Sin conexión</strong>'));
+  setStatus(sid,'yellow','Conectando...');
 });
 
-// ══════════════════════════════════════════
-//  FIREBASE: GUARDAR ESTADO
-// ══════════════════════════════════════════
-function saveState(st) {
-  st.lastUpdate = new Date().toISOString();
-  set(TORNEO_REF, st);
+function saveState(sid){
+  states[sid].lastUpdate = new Date().toISOString();
+  set(ref(db,`torneo_${sid}_v2`), states[sid]);
 }
 
-// ══════════════════════════════════════════
-//  LÓGICA DE AVANCE
-// ══════════════════════════════════════════
-function propagateWinners(st) {
-  for (let i = 0; i < 4; i++) {
-    const m1 = st.octavos[i*2], m2 = st.octavos[i*2+1], c = st.cuartos[i];
-    c.teamA = m1.winner || 'Por definir';
-    c.teamB = m2.winner || 'Por definir';
-    if (!m1.winner || !m2.winner) { c.scoreA=null; c.scoreB=null; c.winner=null; }
+// ═══════════════════════════════
+//  PROPAGATE (solo para type=bracket)
+// ═══════════════════════════════
+function propagate(st){
+  const rounds = st.rounds;
+  for(let r=1;r<rounds.length;r++){
+    const prev = rounds[r-1].matches;
+    const cur  = rounds[r].matches;
+    cur.forEach((m,i)=>{
+      const m1=prev[i*2], m2=prev[i*2+1];
+      m.teamA = m1?.winner || 'Por definir';
+      m.teamB = m2?.winner || 'Por definir';
+      if(!m1?.winner || !m2?.winner){ m.scoreA=null; m.scoreB=null; m.winner=null; }
+    });
   }
-  for (let i = 0; i < 2; i++) {
-    const m1 = st.cuartos[i*2], m2 = st.cuartos[i*2+1], s = st.semis[i];
-    s.teamA = m1.winner || 'Por definir';
-    s.teamB = m2.winner || 'Por definir';
-    if (!m1.winner || !m2.winner) { s.scoreA=null; s.scoreB=null; s.winner=null; }
-  }
-  const f = st.final[0];
-  f.teamA = st.semis[0].winner || 'Por definir';
-  f.teamB = st.semis[1].winner || 'Por definir';
-  if (!st.semis[0].winner || !st.semis[1].winner) { f.scoreA=null; f.scoreB=null; f.winner=null; }
-  st.champion = f.winner || null;
+  const fin = rounds[rounds.length-1].matches[0];
+  st.champion = fin?.winner || null;
 }
 
-// ══════════════════════════════════════════
-//  RENDER BRACKET
-// ══════════════════════════════════════════
-function renderBracket() {
-  const container = document.getElementById('bracketView');
-  container.innerHTML = '';
+// ═══════════════════════════════
+//  STANDINGS (tabla de posiciones, futsal-d)
+// ═══════════════════════════════
+function computeStandings(teams, groupMatches){
+  const tbl = {};
+  teams.forEach(t=>{ tbl[t]={team:t,pj:0,pg:0,pp:0,gf:0,gc:0,dif:0,pts:0}; });
+  groupMatches.forEach(m=>{
+    if(m.winner===null || m.scoreA===null || m.scoreB===null) return;
+    const a=tbl[m.teamA], b=tbl[m.teamB];
+    if(!a||!b) return;
+    a.pj++; b.pj++;
+    a.gf+=m.scoreA; a.gc+=m.scoreB;
+    b.gf+=m.scoreB; b.gc+=m.scoreA;
+    if(m.scoreA>m.scoreB){ a.pg++; a.pts+=3; b.pp++; }
+    else { b.pg++; b.pts+=3; a.pp++; }
+  });
+  Object.values(tbl).forEach(r=>r.dif=r.gf-r.gc);
+  return Object.values(tbl).sort((x,y)=> y.pts-x.pts || y.dif-x.dif || y.gf-x.gf );
+}
 
-  const rounds = [
-    { label:'OCTAVOS DE FINAL', matches:state.octavos },
-    { label:'CUARTOS DE FINAL', matches:state.cuartos },
-    { label:'SEMIFINAL',        matches:state.semis   },
-    { label:'FINAL',            matches:state.final   }
-  ];
+// ═══════════════════════════════
+//  RENDER PUBLIC PANEL
+// ═══════════════════════════════
+function renderPanel(sid){
+  const panel=document.getElementById(`panel-${sid}`);
+  const st=states[sid]; const sp=SPORTS[sid];
+  if(!st||!panel) return;
 
-  rounds.forEach((round, ri) => {
-    const roundDiv = document.createElement('div');
-    roundDiv.className = 'round';
+  const lu=st.lastUpdate?`Última actualización: ${new Date(st.lastUpdate).toLocaleTimeString('es-PE',{hour:'2-digit',minute:'2-digit',second:'2-digit'})}`:'';
 
-    const titleDiv = document.createElement('div');
-    titleDiv.className = 'round-title';
-    titleDiv.textContent = round.label;
+  if(sp.type==='groups'){
+    renderGroupsPanel(sid, panel, st, sp, lu);
+  } else {
+    renderBracketPanel(sid, panel, st, sp, lu);
+  }
+}
+
+function renderBracketPanel(sid, panel, st, sp, lu){
+  panel.innerHTML=`
+    <div class="section-label">Campeonato Deportivo 2026</div>
+    <div class="section-title">${sp.icon} ${sp.label.toUpperCase()}</div>
+    <div class="status-bar" id="status-${sid}">
+      <div class="status-dot yellow" id="statusDot-${sid}"></div>
+      <div class="status-text" id="statusText-${sid}">Conectando...</div>
+    </div>
+    <div class="bracket-container"><div class="bracket" id="bracket-${sid}"></div></div>
+    <div class="last-update">${lu}</div>
+  `;
+  renderBracketEl(document.getElementById(`bracket-${sid}`), st.rounds, st.champion);
+}
+
+function renderGroupsPanel(sid, panel, st, sp, lu){
+  const standings = computeStandings(st.teams, st.groupMatches);
+  const finalMatch = st.final;
+  const finalReady = finalMatch.teamA!=='Por definir' && finalMatch.teamB!=='Por definir';
+
+  panel.innerHTML=`
+    <div class="section-label">Campeonato Deportivo 2026</div>
+    <div class="section-title">${sp.icon} ${sp.label.toUpperCase()}</div>
+    <div class="status-bar" id="status-${sid}">
+      <div class="status-dot yellow" id="statusDot-${sid}"></div>
+      <div class="status-text" id="statusText-${sid}">Conectando...</div>
+    </div>
+
+    <div class="groups-layout">
+      <div class="groups-matches-col">
+        <div class="round-title" style="text-align:left;">FASE DE GRUPOS · TODOS CONTRA TODOS</div>
+        <div id="groupMatchesList-${sid}"></div>
+      </div>
+      <div class="groups-table-col">
+        <div class="round-title" style="text-align:left;">TABLA DE POSICIONES</div>
+        <table class="standings-table">
+          <thead>
+            <tr><th>Equipo</th><th>PJ</th><th>PG</th><th>PP</th><th>Dif</th><th>Pts</th></tr>
+          </thead>
+          <tbody id="standingsBody-${sid}"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="final-section">
+      <div class="round-title" style="text-align:left;">FINAL</div>
+      <div class="bracket-container"><div class="bracket" id="finalBracket-${sid}" style="min-width:0;justify-content:center;"></div></div>
+    </div>
+
+    <div class="last-update">${lu}</div>
+  `;
+
+  // Group matches list
+  const listEl = document.getElementById(`groupMatchesList-${sid}`);
+  st.groupMatches.forEach(m=>{
+    const fin = m.winner!==null;
+    const row=document.createElement('div');
+    row.className='group-match-row'+(fin?' finished':'');
+    const aWin = fin && m.winner===m.teamA;
+    const bWin = fin && m.winner===m.teamB;
+    row.innerHTML=`
+      <div class="group-match-id">${m.id}</div>
+      <div class="group-match-teams">
+        <div class="group-team-name${aWin?' winner':''}">${escH(m.teamA)}</div>
+        <div class="group-score${aWin?' winner':''}">${m.scoreA!==null?m.scoreA:'–'}</div>
+        <div class="group-vs">VS</div>
+        <div class="group-score${bWin?' winner':''}">${m.scoreB!==null?m.scoreB:'–'}</div>
+        <div class="group-team-name right-side${bWin?' winner':''}">${escH(m.teamB)}</div>
+      </div>
+      <div class="group-match-meta">
+        ${m.hora?`<div class="group-meta-hora">🕐 ${m.hora}</div>`:''}
+        ${m.cancha?`<div class="group-meta-cancha">📍 ${escH(canchaDisplay(m.cancha))}</div>`:''}
+      </div>
+    `;
+    listEl.appendChild(row);
+  });
+
+  // Standings table
+  const tbody = document.getElementById(`standingsBody-${sid}`);
+  const qualifiedTeams = finalReady ? [finalMatch.teamA, finalMatch.teamB] : [];
+  standings.forEach(r=>{
+    const isQ = qualifiedTeams.includes(r.team);
+    const tr=document.createElement('tr');
+    if(isQ) tr.className='qualified';
+    tr.innerHTML=`<td>${escH(r.team)}${isQ?' 🏆':''}</td><td>${r.pj}</td><td>${r.pg}</td><td>${r.pp}</td><td>${r.dif>0?'+':''}${r.dif}</td><td class="standings-pts">${r.pts}</td>`;
+    tbody.appendChild(tr);
+  });
+
+  // Final bracket (single match + champion box, reuse renderBracketEl with one round)
+  renderBracketEl(document.getElementById(`finalBracket-${sid}`), [{label:'FINAL',matches:[finalMatch]}], st.champion);
+}
+
+function renderBracketEl(container,rounds,champion){
+  container.innerHTML='';
+  rounds.forEach((round,ri)=>{
+    const isLast=ri===rounds.length-1;
+    const roundDiv=document.createElement('div');
+    roundDiv.className='round';
+    const titleDiv=document.createElement('div');
+    titleDiv.className='round-title';
+    titleDiv.textContent=round.label;
     roundDiv.appendChild(titleDiv);
-
-    const matchesDiv = document.createElement('div');
-    matchesDiv.className = 'round-matches';
-
-    round.matches.forEach(match => {
-      const wrapper = document.createElement('div');
-      wrapper.className = 'match-wrapper';
-
-      const card = document.createElement('div');
-      card.className = 'match-card' + (ri===3?' final-card':'') + (match.winner?' finished':'');
-
-      const idBar = document.createElement('div');
-      idBar.className = 'match-id';
-      idBar.textContent = `PARTIDO ${match.id}`;
-      card.appendChild(idBar);
-
-      const isFinished = match.winner !== null;
-      ['A','B'].forEach(side => {
-        const team  = side==='A' ? match.teamA : match.teamB;
-        const score = side==='A' ? match.scoreA : match.scoreB;
-        const isWinner = isFinished && match.winner === team;
-        const isLoser  = isFinished && match.winner !== team;
-        const isTbd    = team === 'Por definir';
-
-        const row = document.createElement('div');
-        row.className = 'match-team' + (isWinner?' winner-team':isLoser?' loser-team':'');
-
-        const nameEl = document.createElement('div');
-        nameEl.className = 'team-name' + (isTbd?' tbd':'');
-        nameEl.textContent = isTbd ? 'Por definir' : team;
-        nameEl.title = team;
-
-        const scoreEl = document.createElement('div');
-        scoreEl.className = 'team-score' + (isWinner?' winner':isLoser?' loser':'');
-        scoreEl.textContent = score !== null ? score : '–';
-
-        row.appendChild(nameEl);
-        row.appendChild(scoreEl);
-        card.appendChild(row);
-      });
-
-      wrapper.appendChild(card);
+    const matchesDiv=document.createElement('div');
+    matchesDiv.className='round-matches';
+    round.matches.forEach((match,mi)=>{
+      const wrapper=document.createElement('div');
+      wrapper.className='match-wrapper';
+      wrapper.appendChild(buildMatchCard(match,isLast));
+      if(!isLast) wrapper.appendChild(buildConnectorSVG(mi));
       matchesDiv.appendChild(wrapper);
     });
-
     roundDiv.appendChild(matchesDiv);
-
-    if (ri === 3) {
-      const champBox = document.createElement('div');
-      champBox.className = 'champion-box';
-      champBox.style.marginTop = '12px';
-      champBox.innerHTML = `
-        <div class="trophy-icon">🏆</div>
-        <div class="champion-label">Campeón</div>
-        <div class="champion-name ${state.champion?'':'empty'}">${state.champion||'Por definir'}</div>
-      `;
-      roundDiv.appendChild(champBox);
+    if(isLast){
+      const cb=document.createElement('div');
+      cb.className='champion-box';
+      cb.style.marginTop='9px';
+      cb.innerHTML=`<div class="trophy-icon">🏆</div><div class="champion-label">Campeón</div><div class="champion-name ${champion?'':'empty'}">${champion||'Por definir'}</div>`;
+      roundDiv.appendChild(cb);
     }
-
     container.appendChild(roundDiv);
   });
+}
 
-  const lu = document.getElementById('lastUpdate');
-  if (state.lastUpdate) {
-    const d = new Date(state.lastUpdate);
-    lu.textContent = `Última actualización: ${d.toLocaleTimeString('es-PE',{hour:'2-digit',minute:'2-digit',second:'2-digit'})}`;
+// Texto a mostrar para una cancha en la interfaz pública (abrevia "Cancha Sint." a "SINT.")
+function canchaDisplay(cancha){
+  if(cancha === 'Cancha Sint.') return 'SINT.';
+  return cancha;
+}
+
+function buildMatchCard(match,isFinal){
+  const hora   = match.hora||'';
+  const cancha = canchaDisplay(match.cancha||'');
+
+  const outer=document.createElement('div');
+  outer.className='match-outer-wrap';
+
+  const card=document.createElement('div');
+  card.className='match-card'+(isFinal?' final-card':'')+(match.winner?' finished':'');
+  if(cancha) card.style.borderRadius='7px 0 0 7px';
+
+  const idBar=document.createElement('div');
+  idBar.className='match-id';
+  idBar.textContent=`PARTIDO ${match.id}`;
+  card.appendChild(idBar);
+
+  const fin=match.winner!==null;
+  ['A','B'].forEach(side=>{
+    const team =side==='A'?match.teamA:match.teamB;
+    const score=side==='A'?match.scoreA:match.scoreB;
+    const isW=fin&&match.winner===team;
+    const isL=fin&&match.winner!==team;
+    const isTbd=team==='Por definir';
+    const row=document.createElement('div');
+    row.className='match-team'+(isW?' winner-team':isL?' loser-team':'');
+    const nameEl=document.createElement('div');
+    nameEl.className='team-name'+(isTbd?' tbd':'');
+    nameEl.textContent=isTbd?'Por definir':team;
+    nameEl.title=team;
+    const scoreEl=document.createElement('div');
+    scoreEl.className='team-score'+(isW?' winner':isL?' loser':'');
+    scoreEl.textContent=score!==null?score:'–';
+    row.appendChild(nameEl);
+    row.appendChild(scoreEl);
+    card.appendChild(row);
+  });
+
+  if(hora){
+    const horaEl=document.createElement('div');
+    horaEl.className='match-meta-hora';
+    horaEl.textContent='🕐 '+hora;
+    card.appendChild(horaEl);
+  }
+
+  outer.appendChild(card);
+
+  if(cancha){
+    const badge=document.createElement('div');
+    badge.className='match-cancha-badge';
+    badge.innerHTML = cancha.split('').map(ch => ch===' ' ? '<span>&nbsp;</span>' : `<span>${escH(ch)}</span>`).join('');
+    outer.appendChild(badge);
+  }
+
+  return outer;
+}
+
+function buildConnectorSVG(mi){
+  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('class','connector-svg');
+  svg.setAttribute('viewBox','0 0 24 100');
+  svg.setAttribute('preserveAspectRatio','none');
+  const c='rgba(255,255,255,0.18)', sw='1.5';
+  const isTop=mi%2===0;
+  const mkLine=(x1,y1,x2,y2)=>{
+    const l=document.createElementNS('http://www.w3.org/2000/svg','line');
+    l.setAttribute('x1',x1);l.setAttribute('y1',y1);l.setAttribute('x2',x2);l.setAttribute('y2',y2);
+    l.setAttribute('stroke',c);l.setAttribute('stroke-width',sw);
+    return l;
+  };
+  svg.appendChild(mkLine(0,50,12,50));
+  svg.appendChild(mkLine(12,50,12,isTop?100:0));
+  if(isTop) svg.appendChild(mkLine(12,100,24,100));
+  return svg;
+}
+
+function setStatus(sid,type,msg){
+  const dot=document.getElementById(`statusDot-${sid}`);
+  const txt=document.getElementById(`statusText-${sid}`);
+  if(dot) dot.className='status-dot '+type;
+  if(txt) txt.innerHTML=msg;
+}
+
+// ═══════════════════════════════
+//  PUBLIC TABS
+// ═══════════════════════════════
+window.switchTab=function(sid){
+  document.querySelectorAll('.sport-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.className='tab-btn');
+  document.getElementById(`panel-${sid}`).classList.add('active');
+  document.getElementById(`tab-${sid}`).classList.add(`active-${sid}`);
+};
+
+// ═══════════════════════════════
+//  MODAL CONFIGURACIÓN
+// ═══════════════════════════════
+let adminLoggedIn=false;
+window._adminSport='futsal-v';
+
+window.openAdminModal=function(){
+  document.getElementById('adminModal').style.display='flex';
+  if(!adminLoggedIn){
+    document.getElementById('adminLoginPanel').style.display='block';
+    document.getElementById('adminPanel').style.display='none';
+    document.getElementById('adminLoginSuccess').style.display='none';
+  } else { showAdminPanel(); }
+  document.getElementById('adminPwInput').value='';
+  document.getElementById('adminLoginError').style.display='none';
+  setTimeout(()=>document.getElementById('adminPwInput').focus(),100);
+};
+window.closeAdminModal=function(){ document.getElementById('adminModal').style.display='none'; };
+
+window.doAdminLogin=function(){
+  if(document.getElementById('adminPwInput').value===PW_ADMIN){
+    adminLoggedIn=true;
+    document.getElementById('adminLoginPanel').style.display='none';
+    const ok=document.getElementById('adminLoginSuccess');
+    ok.style.display='flex';
+    setTimeout(()=>{ok.style.display='none';showAdminPanel();},1400);
+  } else {
+    document.getElementById('adminLoginError').style.display='block';
+    document.getElementById('adminPwInput').value='';
+    document.getElementById('adminPwInput').focus();
+  }
+};
+
+function showAdminPanel(){
+  document.getElementById('adminLoginPanel').style.display='none';
+  document.getElementById('adminLoginSuccess').style.display='none';
+  document.getElementById('adminPanel').style.display='block';
+  renderAdminSetup(window._adminSport);
+}
+
+window.switchAdminTab=function(sid,btn){
+  window._adminSport=sid;
+  document.querySelectorAll('#adminSportTabs .modal-sport-tab').forEach(b=>b.classList.remove('active-admin'));
+  btn.classList.add('active-admin');
+  renderAdminSetup(sid);
+};
+
+function renderAdminSetup(sid){
+  const sp = SPORTS[sid];
+  const bracketContent = document.getElementById('adminBracketContent');
+  const groupsContent  = document.getElementById('adminGroupsContent');
+  if(sp.type==='groups'){
+    bracketContent.style.display='none';
+    groupsContent.style.display='block';
+    renderTeamsGridGroups(sid);
+    renderScheduleGridGroups(sid);
+    renderFinalSetupGroups(sid);
+  } else {
+    bracketContent.style.display='block';
+    groupsContent.style.display='none';
+    renderTeamsGrid(sid);
+    renderMatchupsGrid(sid);
+    renderScheduleGrid(sid);
   }
 }
 
-// ══════════════════════════════════════════
-//  RENDER ADMIN PANEL
-// ══════════════════════════════════════════
-function renderAdminPanel() {
-  const sections = [
-    { id:'adminOctavos', matches:state.octavos },
-    { id:'adminCuartos', matches:state.cuartos },
-    { id:'adminSemis',   matches:state.semis   },
-    { id:'adminFinal',   matches:state.final   }
-  ];
-  sections.forEach(({ id, matches }) => {
-    const container = document.getElementById(id);
-    if (!container) return;
-    container.innerHTML = '';
-    matches.forEach(match => {
-      const row = document.createElement('div');
-      row.className = 'admin-match-row';
-      const tbd = match.teamA === 'Por definir' || match.teamB === 'Por definir';
-      row.innerHTML = `
-        <div class="admin-match-id">${match.id}</div>
-        <div class="admin-teams">
-          <div class="admin-team-name">${match.teamA}</div>
-          <input type="number" class="score-input" id="sa_${match.id}"
-            value="${match.scoreA !== null ? match.scoreA : ''}" min="0" max="99" ${tbd?'disabled':''}>
-          <span class="vs-label">:</span>
-          <input type="number" class="score-input" id="sb_${match.id}"
-            value="${match.scoreB !== null ? match.scoreB : ''}" min="0" max="99" ${tbd?'disabled':''}>
-          <div class="admin-team-name">${match.teamB}</div>
-        </div>
-        <button class="btn-save-match" onclick="window._saveMatch('${match.id}')" ${tbd?'disabled':''}>
-          Guardar
-        </button>
-      `;
-      container.appendChild(row);
-    });
+// ─── BRACKET: Teams ───
+function renderTeamsGrid(sid){
+  const st=states[sid]; const n=SPORTS[sid].teams;
+  const grid=document.getElementById('teamsGrid');
+  if(!grid) return;
+  const div=document.createElement('div'); div.className='teams-grid';
+  for(let i=0;i<n;i++){
+    const wrap=document.createElement('div'); wrap.className='team-input-wrap';
+    wrap.innerHTML=`<span class="team-slot-label">Equipo ${i+1}</span><input class="team-input" id="team_${sid}_${i}" type="text" value="${escH((st.teams&&st.teams[i])||`Equipo ${i+1}`)}" placeholder="Nombre" maxlength="28">`;
+    div.appendChild(wrap);
+  }
+  grid.innerHTML=''; grid.appendChild(div);
+}
+
+window.saveTeams=function(){
+  const sid=window._adminSport; const st=states[sid]; const n=SPORTS[sid].teams;
+  const teams=[];
+  for(let i=0;i<n;i++){
+    const v=document.getElementById(`team_${sid}_${i}`)?.value.trim();
+    teams.push(v||`Equipo ${i+1}`);
+  }
+  st.teams=teams; saveState(sid); renderMatchupsGrid(sid); showToast('✓ Equipos guardados');
+};
+
+// ─── BRACKET: Matchups (primera ronda) ───
+function renderMatchupsGrid(sid){
+  const st=states[sid]; const grid=document.getElementById('matchupsGrid');
+  if(!grid) return;
+  grid.innerHTML='';
+  const teams=st.teams||blankTeams(SPORTS[sid].teams);
+  const firstRound = st.rounds[0].matches;
+  firstRound.forEach((match,i)=>{
+    const row=document.createElement('div'); row.className='matchup-row';
+    const opA=teams.map(t=>`<option value="${escH(t)}" ${match.teamA===t?'selected':''}>${escH(t)}</option>`).join('');
+    const opB=teams.map(t=>`<option value="${escH(t)}" ${match.teamB===t?'selected':''}>${escH(t)}</option>`).join('');
+    row.innerHTML=`<div class="matchup-label">P${i+1}</div><select class="matchup-select" id="mu_a_${sid}_${i}">${opA}</select><span class="vs-text">VS</span><select class="matchup-select" id="mu_b_${sid}_${i}">${opB}</select>`;
+    grid.appendChild(row);
   });
 }
 
-window._saveMatch = function(matchId) {
-  const sa = document.getElementById(`sa_${matchId}`).value;
-  const sb = document.getElementById(`sb_${matchId}`).value;
-  if (sa===''||sb==='') { showToast('Ingresa ambos marcadores','error'); return; }
-  const saN = parseInt(sa), sbN = parseInt(sb);
-  if (isNaN(saN)||isNaN(sbN)||saN<0||sbN<0) { showToast('Marcadores inválidos','error'); return; }
-  if (saN===sbN) { showToast('No puede haber empate en eliminatoria','error'); return; }
-
-  const allMatches = [...state.octavos,...state.cuartos,...state.semis,...state.final];
-  const match = allMatches.find(m => m.id === matchId);
-  if (!match) return;
-
-  match.scoreA = saN;
-  match.scoreB = sbN;
-  match.winner = saN > sbN ? match.teamA : match.teamB;
-
-  propagateWinners(state);
-  saveState(state);
-  showToast(`✓ ${match.winner} avanza a la siguiente ronda`);
+window.saveMatchups=function(){
+  const sid=window._adminSport; const st=states[sid];
+  const firstRound = st.rounds[0].matches;
+  firstRound.forEach((match,i)=>{
+    const a=document.getElementById(`mu_a_${sid}_${i}`)?.value;
+    const b=document.getElementById(`mu_b_${sid}_${i}`)?.value;
+    if(a&&b){ match.teamA=a; match.teamB=b; match.scoreA=null; match.scoreB=null; match.winner=null; }
+  });
+  propagate(st); saveState(sid); renderScheduleGrid(sid); showToast('✓ Cruces guardados — llave lista');
 };
 
-// ══════════════════════════════════════════
-//  ADMIN MODAL
-// ══════════════════════════════════════════
-window.openAdminModal = function() {
-  document.getElementById('adminModal').style.display = 'flex';
-  if (!isLoggedIn) {
-    document.getElementById('loginPanel').style.display  = 'block';
-    document.getElementById('adminPanel').style.display  = 'none';
-    document.getElementById('loginSuccess').style.display = 'none';
-  } else {
-    showAdminPanel();
-  }
-  document.getElementById('pwInput').value = '';
-  document.getElementById('loginError').style.display = 'none';
-  setTimeout(() => document.getElementById('pwInput').focus(), 100);
-};
+// ─── BRACKET: Schedule (todas las rondas) ───
+function renderScheduleGrid(sid){
+  const st=states[sid];
+  const grid=document.getElementById('scheduleGrid');
+  if(!grid) return;
+  grid.innerHTML='';
 
-window.closeAdminModal = function() {
-  document.getElementById('adminModal').style.display = 'none';
-};
-
-window.doLogin = function() {
-  const pw = document.getElementById('pwInput').value;
-  if (pw === PASSWORD) {
-    isLoggedIn = true;
-    document.getElementById('loginError').style.display = 'none';
-    document.getElementById('loginPanel').style.display  = 'none';
-    const ok = document.getElementById('loginSuccess');
-    ok.style.display = 'flex';
-    setTimeout(() => { ok.style.display='none'; showAdminPanel(); }, 1400);
-  } else {
-    document.getElementById('loginError').style.display = 'block';
-    document.getElementById('pwInput').value = '';
-    document.getElementById('pwInput').focus();
-  }
-};
-
-function showAdminPanel() {
-  document.getElementById('loginPanel').style.display   = 'none';
-  document.getElementById('loginSuccess').style.display = 'none';
-  document.getElementById('adminPanel').style.display   = 'block';
-  renderAdminPanel();
+  st.rounds.forEach(({label,matches})=>{
+    const sec=document.createElement('div');
+    sec.innerHTML=`<div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray-mid);margin:10px 0 5px;">${label}</div>`;
+    matches.forEach((match)=>{
+      sec.appendChild(buildScheduleRow(sid, match));
+    });
+    grid.appendChild(sec);
+  });
 }
 
-window.resetTournament = function() {
-  if (!confirm('¿Reiniciar el torneo? Se borrarán TODOS los resultados.')) return;
-  const fresh = defaultState();
-  saveState(fresh);
-  showToast('Torneo reiniciado');
+function buildScheduleRow(sid, match){
+  const tA=match.teamA==='Por definir'?'?':match.teamA;
+  const tB=match.teamB==='Por definir'?'?':match.teamB;
+  const canchaOpts=`<option value="">— sin asignar —</option>`+CANCHAS.map(c=>`<option value="${c}" ${match.cancha===c?'selected':''}>${c}</option>`).join('');
+  const row=document.createElement('div');
+  row.className='matchup-row';
+  row.innerHTML=`
+    <div class="matchup-label" style="color:var(--teal);">${match.id}</div>
+    <div style="flex:1;min-width:120px;font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${escH(tA)} vs ${escH(tB)}</div>
+    <div style="display:flex;align-items:center;gap:8px;width:100%;margin-top:5px;padding-top:5px;border-top:1px solid rgba(255,255,255,.06);">
+      <span style="font-size:10px;color:var(--gray-mid);white-space:nowrap;">🕐 Hora:</span>
+      <input type="time" class="hora-select" id="hora_${sid}_${match.id}" value="${match.hora||''}" step="300">
+      <span style="font-size:10px;color:var(--gray-mid);white-space:nowrap;">📍 Cancha:</span>
+      <select class="cancha-select" id="cancha_${sid}_${match.id}">${canchaOpts}</select>
+    </div>
+  `;
+  return row;
+}
+
+window.saveSchedule=function(){
+  const sid=window._adminSport; const st=states[sid];
+  const allMatches = st.rounds.flatMap(r=>r.matches);
+  allMatches.forEach(match=>{
+    const h=document.getElementById(`hora_${sid}_${match.id}`)?.value;
+    const c=document.getElementById(`cancha_${sid}_${match.id}`)?.value;
+    if(h!==undefined) match.hora=h||'';
+    if(c!==undefined) match.cancha=c||'';
+  });
+  saveState(sid);
+  showToast('✓ Horarios y canchas guardados');
 };
 
-document.getElementById('adminModal').addEventListener('click', function(e) {
-  if (e.target === this) window.closeAdminModal();
-});
+// ─── GROUPS (futsal-d): Teams ───
+function renderTeamsGridGroups(sid){
+  const st=states[sid]; const n=SPORTS[sid].teams;
+  const grid=document.getElementById('teamsGridGroups');
+  if(!grid) return;
+  const div=document.createElement('div'); div.className='teams-grid';
+  for(let i=0;i<n;i++){
+    const wrap=document.createElement('div'); wrap.className='team-input-wrap';
+    wrap.innerHTML=`<span class="team-slot-label">Equipo ${i+1}</span><input class="team-input" id="teamg_${sid}_${i}" type="text" value="${escH((st.teams&&st.teams[i])||`Equipo ${i+1}`)}" placeholder="Nombre" maxlength="28">`;
+    div.appendChild(wrap);
+  }
+  grid.innerHTML=''; grid.appendChild(div);
+}
 
-// ══════════════════════════════════════════
-//  TOAST
-// ══════════════════════════════════════════
-function showToast(msg, type) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.style.background = type==='error' ? '#c0392b' : 'var(--teal)';
-  t.style.color      = type==='error' ? '#fff'    : 'var(--navy-dark)';
-  t.style.display    = 'block';
+window.saveTeamsGroups=function(){
+  const sid=window._adminSport; const st=states[sid]; const n=SPORTS[sid].teams;
+  const teams=[];
+  for(let i=0;i<n;i++){
+    const v=document.getElementById(`teamg_${sid}_${i}`)?.value.trim();
+    teams.push(v||`Equipo ${i+1}`);
+  }
+  st.teams=teams;
+  // Reasignar nombres en los 6 partidos según los pares fijos, conservando resultados ya ingresados
+  st.groupMatches.forEach((m,i)=>{
+    const pair=GROUP_PAIRS[i];
+    m.teamA=teams[pair[0]];
+    m.teamB=teams[pair[1]];
+  });
+  saveState(sid);
+  renderScheduleGridGroups(sid);
+  renderFinalSetupGroups(sid);
+  showToast('✓ Equipos guardados');
+};
+
+// ─── GROUPS: Schedule de los 6 partidos ───
+function renderScheduleGridGroups(sid){
+  const st=states[sid];
+  const grid=document.getElementById('scheduleGridGroups');
+  if(!grid) return;
+  grid.innerHTML='';
+  st.groupMatches.forEach(match=>{
+    grid.appendChild(buildScheduleRow(sid, match));
+  });
+}
+
+window.saveScheduleGroups=function(){
+  const sid=window._adminSport; const st=states[sid];
+  st.groupMatches.forEach(match=>{
+    const h=document.getElementById(`hora_${sid}_${match.id}`)?.value;
+    const c=document.getElementById(`cancha_${sid}_${match.id}`)?.value;
+    if(h!==undefined) match.hora=h||'';
+    if(c!==undefined) match.cancha=c||'';
+  });
+  saveState(sid);
+  showToast('✓ Horarios y canchas guardados');
+};
+
+// ─── GROUPS: Definir Final manualmente ───
+function renderFinalSetupGroups(sid){
+  const st=states[sid];
+  const container=document.getElementById('finalSetupGroups');
+  if(!container) return;
+  const teams = st.teams || blankTeams(4);
+  const fm = st.final;
+  const opA=teams.map(t=>`<option value="${escH(t)}" ${fm.teamA===t?'selected':''}>${escH(t)}</option>`).join('');
+  const opB=teams.map(t=>`<option value="${escH(t)}" ${fm.teamB===t?'selected':''}>${escH(t)}</option>`).join('');
+  const canchaOpts=`<option value="">— sin asignar —</option>`+CANCHAS.map(c=>`<option value="${c}" ${fm.cancha===c?'selected':''}>${c}</option>`).join('');
+  container.innerHTML=`
+    <div class="qualify-row">
+      <div class="qualify-label">Finalistas:</div>
+      <select class="matchup-select" id="finalg_a_${sid}">
+        <option value="Por definir" ${fm.teamA==='Por definir'?'selected':''}>— sin asignar —</option>
+        ${opA}
+      </select>
+      <span class="vs-text">VS</span>
+      <select class="matchup-select" id="finalg_b_${sid}">
+        <option value="Por definir" ${fm.teamB==='Por definir'?'selected':''}>— sin asignar —</option>
+        ${opB}
+      </select>
+    </div>
+    <div class="qualify-row">
+      <div class="qualify-label">🕐 Hora:</div>
+      <input type="time" class="hora-select" id="finalg_hora_${sid}" value="${fm.hora||''}" step="300">
+      <div class="qualify-label" style="margin-left:10px;">📍 Cancha:</div>
+      <select class="cancha-select" id="finalg_cancha_${sid}">${canchaOpts}</select>
+    </div>
+  `;
+}
+
+window.saveFinalGroups=function(){
+  const sid=window._adminSport; const st=states[sid];
+  const a=document.getElementById(`finalg_a_${sid}`)?.value;
+  const b=document.getElementById(`finalg_b_${sid}`)?.value;
+  const h=document.getElementById(`finalg_hora_${sid}`)?.value;
+  const c=document.getElementById(`finalg_cancha_${sid}`)?.value;
+  const fm = st.final;
+  if(a!==fm.teamA || b!==fm.teamB){
+    // Si cambian los equipos, resetear marcador
+    fm.scoreA=null; fm.scoreB=null; fm.winner=null; st.champion=null;
+  }
+  fm.teamA = a || 'Por definir';
+  fm.teamB = b || 'Por definir';
+  fm.hora  = h || '';
+  fm.cancha= c || '';
+  saveState(sid);
+  showToast('✓ Final configurada');
+};
+
+window.resetSport=function(){
+  const sid=window._adminSport;
+  if(!confirm(`¿Reiniciar ${SPORTS[sid].label}?`)) return;
+  states[sid]=defaultState(sid); saveState(sid); renderAdminSetup(sid); showToast('Deporte reiniciado');
+};
+
+document.getElementById('adminModal').addEventListener('click',function(e){ if(e.target===this) window.closeAdminModal(); });
+
+// ═══════════════════════════════
+//  MODAL RESULTADOS
+// ═══════════════════════════════
+let resultsLoggedIn=false;
+window._resultsOpen=false;
+window._resultsSport='futsal-v';
+
+window.openResultsModal=function(){
+  document.getElementById('resultsModal').style.display='flex';
+  window._resultsOpen=true;
+  if(!resultsLoggedIn){
+    document.getElementById('resultsLoginPanel').style.display='block';
+    document.getElementById('resultsPanel').style.display='none';
+    document.getElementById('resultsLoginSuccess').style.display='none';
+  } else { showResultsPanel(); }
+  document.getElementById('resultsPwInput').value='';
+  document.getElementById('resultsLoginError').style.display='none';
+  setTimeout(()=>document.getElementById('resultsPwInput').focus(),100);
+};
+window.closeResultsModal=function(){
+  document.getElementById('resultsModal').style.display='none';
+  window._resultsOpen=false;
+};
+
+window.doResultsLogin=function(){
+  if(document.getElementById('resultsPwInput').value===PW_RESULTS){
+    resultsLoggedIn=true;
+    document.getElementById('resultsLoginPanel').style.display='none';
+    const ok=document.getElementById('resultsLoginSuccess');
+    ok.style.display='flex';
+    setTimeout(()=>{ok.style.display='none';showResultsPanel();},1400);
+  } else {
+    document.getElementById('resultsLoginError').style.display='block';
+    document.getElementById('resultsPwInput').value='';
+    document.getElementById('resultsPwInput').focus();
+  }
+};
+
+function showResultsPanel(){
+  document.getElementById('resultsLoginPanel').style.display='none';
+  document.getElementById('resultsLoginSuccess').style.display='none';
+  document.getElementById('resultsPanel').style.display='block';
+  renderResultsMatches(window._resultsSport);
+}
+
+window.switchResultsTab=function(sid,btn){
+  window._resultsSport=sid;
+  document.querySelectorAll('#resultsSportTabs .modal-sport-tab').forEach(b=>b.classList.remove('active-results'));
+  btn.classList.add('active-results');
+  renderResultsMatches(sid);
+};
+
+function renderResultsMatches(sid){
+  const st=states[sid]; const sp=SPORTS[sid];
+  const container=document.getElementById('resultsMatchesContainer');
+  if(!container) return;
+  container.innerHTML='';
+
+  if(sp.type==='groups'){
+    const grpSec=document.createElement('div');
+    grpSec.innerHTML=`<div class="results-section-title">Fase de Grupos</div>`;
+    st.groupMatches.forEach(m=>grpSec.appendChild(buildResultRow(sid,m)));
+    container.appendChild(grpSec);
+
+    const finSec=document.createElement('div');
+    finSec.innerHTML=`<div class="results-section-title">Final</div>`;
+    const tbd = st.final.teamA==='Por definir'||st.final.teamB==='Por definir';
+    if(tbd){
+      const note=document.createElement('div');
+      note.className='admin-note';
+      note.textContent='La Final aún no está configurada. Ve a ⚙️ Config para asignar los finalistas.';
+      finSec.appendChild(note);
+    } else {
+      finSec.appendChild(buildResultRow(sid, st.final));
+    }
+    container.appendChild(finSec);
+  } else {
+    st.rounds.forEach(({label,matches})=>{
+      const sec=document.createElement('div');
+      sec.innerHTML=`<div class="results-section-title">${label}</div>`;
+      matches.forEach(m=>sec.appendChild(buildResultRow(sid,m)));
+      container.appendChild(sec);
+    });
+  }
+}
+
+function buildResultRow(sid, match){
+  const tbd=match.teamA==='Por definir'||match.teamB==='Por definir';
+  const row=document.createElement('div'); row.className='admin-match-row';
+  row.innerHTML=`
+    <div class="admin-match-id">${match.id}</div>
+    <div class="admin-teams">
+      <div class="admin-team-name">${escH(match.teamA)}</div>
+      <input type="number" class="score-input" id="rs_a_${sid}_${match.id}"
+        value="${match.scoreA!==null?match.scoreA:''}" min="0" max="99" ${tbd?'disabled':''}>
+      <span class="vs-label">:</span>
+      <input type="number" class="score-input" id="rs_b_${sid}_${match.id}"
+        value="${match.scoreB!==null?match.scoreB:''}" min="0" max="99" ${tbd?'disabled':''}>
+      <div class="admin-team-name">${escH(match.teamB)}</div>
+    </div>
+    <button class="btn-save-match" onclick="window._saveMatch('${sid}','${match.id}')" ${tbd?'disabled':''}>Guardar</button>
+  `;
+  return row;
+}
+
+window._saveMatch=function(sid,matchId){
+  const sa=document.getElementById(`rs_a_${sid}_${matchId}`)?.value;
+  const sb=document.getElementById(`rs_b_${sid}_${matchId}`)?.value;
+  if(sa===''||sb===''||sa==null||sb==null){showToast('Ingresa ambos marcadores','error');return;}
+  const saN=parseInt(sa),sbN=parseInt(sb);
+  if(isNaN(saN)||isNaN(sbN)||saN<0||sbN<0){showToast('Marcadores inválidos','error');return;}
+
+  const st=states[sid]; const sp=SPORTS[sid];
+  let match, isFinal=false;
+
+  if(sp.type==='groups'){
+    match = st.groupMatches.find(m=>m.id===matchId) || (st.final.id===matchId ? st.final : null);
+    isFinal = st.final.id===matchId;
+  } else {
+    match = st.rounds.flatMap(r=>r.matches).find(m=>m.id===matchId);
+  }
+  if(!match) return;
+
+  if(saN===sbN){
+    // En fase de grupos un empate es válido (no se exige ganador para la tabla),
+    // pero para Final o brackets eliminatorios no se permite empate.
+    if(sp.type==='groups' && !isFinal){
+      match.scoreA=saN; match.scoreB=sbN; match.winner=null;
+      saveState(sid);
+      renderResultsMatches(sid);
+      showToast(`✓ Empate registrado ${match.teamA} ${saN}-${sbN} ${match.teamB}`);
+      return;
+    } else {
+      showToast('No puede haber empate en esta instancia','error'); return;
+    }
+  }
+
+  match.scoreA=saN; match.scoreB=sbN;
+  match.winner=saN>sbN?match.teamA:match.teamB;
+
+  if(sp.type==='groups'){
+    if(isFinal) st.champion = match.winner;
+  } else {
+    propagate(st);
+  }
+  saveState(sid);
+  renderResultsMatches(sid);
+  showToast(`✓ ${match.winner} ${isFinal?'es Campeón':'avanza'}`);
+};
+
+document.getElementById('resultsModal').addEventListener('click',function(e){ if(e.target===this) window.closeResultsModal(); });
+
+// ═══════════════════════════════
+//  TOAST & UTILS
+// ═══════════════════════════════
+function showToast(msg,type){
+  const t=document.getElementById('toast');
+  t.textContent=msg;
+  t.style.background=type==='error'?'#c0392b':'var(--teal)';
+  t.style.color=type==='error'?'#fff':'var(--navy-dark)';
+  t.style.display='block';
   clearTimeout(t._timer);
-  t._timer = setTimeout(() => t.style.display='none', 3200);
+  t._timer=setTimeout(()=>t.style.display='none',3200);
 }
+function escH(str){ return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
-// Render inicial mientras llega Firebase
-renderBracket();
-setStatus('yellow', 'Conectando con Firebase...');
+// ═══════════════════════════════
+//  INIT
+// ═══════════════════════════════
+Object.keys(SPORTS).forEach(sid=>renderPanel(sid));
+switchTab('futsal-v');
 </script>
 </body>
 </html>
